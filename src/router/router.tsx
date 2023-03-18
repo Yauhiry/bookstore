@@ -1,12 +1,14 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
-import { AccountPage } from '../pages/AccountPage';
-import { BookPage } from '../pages/BookPage';
-import { CartPage } from '../pages/CartPage';
-import { FavoritesPage } from '../pages/FavoritesPage';
-import { HomePage } from '../pages/HomePage';
-import { SearchPage } from '../pages/SearchPage';
-import { SignInPage } from '../pages/SignInPage';
-import { SignUpPage } from '../pages/SignUpPage';
+import {
+  AccountPage,
+  BookPage,
+  CartPage,
+  FavoritesPage,
+  HomePage,
+  SearchPage,
+  SignInPage,
+  SignUpPage,
+} from 'pages';
 import { MainTemplate } from '../templates/MainTemplate';
 import { ROUTE } from './routes';
 

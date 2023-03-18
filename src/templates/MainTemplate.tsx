@@ -1,11 +1,15 @@
+import { Footer, Nav } from 'components';
 import { Outlet } from 'react-router-dom';
-import { Nav } from '../components/Nav';
+import { Container, StyledMainTemplate } from './styles';
 
 export const MainTemplate = () => {
   return (
-    <div>
-      <Nav />
-      <Outlet />
-    </div>
+    <StyledMainTemplate>
+      <Container>
+        <Nav />
+        <Outlet />
+        <Footer />
+      </Container>
+    </StyledMainTemplate>
   );
 };
