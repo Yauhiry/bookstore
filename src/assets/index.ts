@@ -1,6 +1,6 @@
-import accountIcon from './icons/account-icon.svg';
-import cartIcon from './icons/cart-icon.svg';
-import favoritesIcon from './icons/favorites-icon.svg';
-import logoImg from './images/logo.svg';
+import { ReactComponent as AccountIcon } from './icons/account.svg';
+import { ReactComponent as CartIcon } from './icons/cart.svg';
+import { ReactComponent as FavoritesIcon } from './icons/favorites.svg';
+import { ReactComponent as LogoIcon } from './icons/logo.svg';
 
-export { accountIcon, cartIcon, favoritesIcon, logoImg };
+export { AccountIcon, CartIcon, FavoritesIcon, LogoIcon };
