@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from 'ui';
 
 export const StyledNav = styled.nav`
   display: grid;
@@ -6,23 +7,17 @@ export const StyledNav = styled.nav`
   align-items: center;
   grid-gap: 40px;
   padding: 24px 0;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid ${Color.GRAY};
 `;
 
 export const LinkGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-self: right;
-  grid-gap: 8px;
-`;
-
-export const Logo = styled.img`
-  padding-right: 16px;
-`;
-
-export const Icon = styled.img`
+  grid-gap: 40px;
   padding: 16px;
 `;
+
 export const Input = styled.input`
   justify-self: center;
   width: clamp(200px, 100%, 542px);

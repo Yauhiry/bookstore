@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-body, div, h1, ul, li, input, form, button, span {
+body, div, h1, ul, li, input, form, button, span, a {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -14,6 +14,9 @@ body, div, h1, ul, li, input, form, button, span {
   }
   button {
     border: none;
+  }
+  a {
+    text-decoration: none;
   }
 `;
 

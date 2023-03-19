@@ -1,24 +1,24 @@
-import { accountIcon, cartIcon, favoritesIcon, logoImg } from 'assets';
+import { AccountIcon, CartIcon, FavoritesIcon, LogoIcon } from 'assets';
 import { Link } from 'react-router-dom';
 import { ROUTE } from '../../../router/routes';
-import { Icon, Input, LinkGroup, Logo, StyledNav } from './styles';
+import { Input, LinkGroup, StyledNav } from './styles';
 
 export const Nav = () => {
   return (
     <StyledNav>
       <Link to={ROUTE.HOME}>
-        <Logo src={logoImg} />
+        <LogoIcon />
       </Link>
       <Input placeholder="Search" />
       <LinkGroup>
         <Link to={ROUTE.FAVORITES}>
-          <Icon src={favoritesIcon} />
+          <FavoritesIcon />
         </Link>
         <Link to={ROUTE.CART}>
-          <Icon src={cartIcon} />
+          <CartIcon />
         </Link>
         <Link to={ROUTE.ACCOUNT}>
-          <Icon src={accountIcon} />
+          <AccountIcon />
         </Link>
       </LinkGroup>
     </StyledNav>
