@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 interface NewBooksState {
-  results: any[];
+  books: any[];
   isLoading: boolean;
   error: string | null;
 }
@@ -13,7 +13,7 @@ export const fetchNewBooks = createAsyncThunk('newBooks/fetchNewReleasesBooks', 
 });
 
 const initialState: NewBooksState = {
-  results: [],
+  books: [],
   isLoading: false,
   error: null,
 };
@@ -28,7 +28,7 @@ const newBooksSlice = createSlice({
     });
     builder.addCase(fetchNewBooks.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.results.push(...payload);
+      state.books.push(...payload.books);
     });
     builder.addCase(fetchNewBooks.rejected, (state) => {
       state.isLoading = false;
