@@ -7,6 +7,7 @@ export const StyledMainTemplate = styled.div`
 
 export const Container = styled.div`
   display: grid;
+  grid-gap: 72px;
   grid-template-rows: auto 1fr auto;
   width: clamp(320px, 100%, 1200px);
   min-height: 100vh;

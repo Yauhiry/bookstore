@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Color } from 'ui';
+import { COLOR } from 'ui';
 
 export const StyledNav = styled.nav`
   display: grid;
@@ -7,7 +7,7 @@ export const StyledNav = styled.nav`
   align-items: center;
   grid-gap: 40px;
   padding: 24px 0;
-  border-bottom: 1px solid ${Color.GRAY};
+  border-bottom: 1px solid ${COLOR.GRAY};
 `;
 
 export const LinkGroup = styled.div`
