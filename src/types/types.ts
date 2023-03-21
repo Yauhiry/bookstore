@@ -6,3 +6,9 @@ export interface Book {
   image: string;
   url: string;
 }
+
+export interface ResponseBooks {
+  books: Book[];
+  error: string;
+  total: string;
+}
