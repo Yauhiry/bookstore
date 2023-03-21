@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { Book } from 'types';
+import axios, { AxiosError } from 'axios';
+import { Book, ResponseBooks } from 'types';
 
 interface NewBooksState {
   books: Book[];
@@ -8,10 +8,18 @@ interface NewBooksState {
   error: string | null;
 }
 
-export const fetchNewBooks = createAsyncThunk('newBooks/fetchNewReleasesBooks', async () => {
-  const { data } = await axios.get('https://api.itbook.store/1.0/new');
-  return data;
-});
+export const fetchNewBooks = createAsyncThunk<ResponseBooks, undefined, { rejectValue: string }>(
+  'newBooks/fetchNewReleasesBooks',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get<ResponseBooks>('https://api.itbook.store/1.0/new');
+      return data;
+    } catch (error) {
+      const { message } = error as AxiosError;
+      return rejectWithValue(message);
+    }
+  }
+);
 
 const initialState: NewBooksState = {
   books: [],
@@ -31,8 +39,11 @@ const newBooksSlice = createSlice({
       state.isLoading = false;
       state.books.push(...payload.books);
     });
-    builder.addCase(fetchNewBooks.rejected, (state) => {
-      state.isLoading = false;
+    builder.addCase(fetchNewBooks.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
     });
   },
 });
