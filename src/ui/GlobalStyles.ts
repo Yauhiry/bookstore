@@ -7,7 +7,7 @@ body, div, h1, ul, li, input, form, button, span, a {
     box-sizing: border-box;
   }
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
   ul {
     list-style: none;
@@ -16,6 +16,7 @@ body, div, h1, ul, li, input, form, button, span, a {
     border: none;
   }
   a {
+    display: flex;
     text-decoration: none;
   }
 `;
