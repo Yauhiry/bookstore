@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { Book } from 'types';
 
 interface NewBooksState {
-  books: any[];
+  books: Book[];
   isLoading: boolean;
   error: string | null;
 }
