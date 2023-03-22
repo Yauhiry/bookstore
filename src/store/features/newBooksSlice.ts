@@ -4,7 +4,7 @@ import { Book, ResponseBooks } from 'types';
 
 interface NewBooksState {
   books: Book[];
-  isLoading: boolean;
+  isLoading: 'idle' | 'pending' | 'succeeded' | 'failed';
   error: string | null;
 }
 
@@ -23,25 +23,28 @@ export const fetchNewBooks = createAsyncThunk<ResponseBooks, undefined, { reject
 
 const initialState: NewBooksState = {
   books: [],
-  isLoading: false,
+  isLoading: 'idle',
   error: null,
 };
-
 const newBooksSlice = createSlice({
   name: 'newBooks',
   initialState,
   reducers: {},
   extraReducers(builder) {
     builder.addCase(fetchNewBooks.pending, (state) => {
-      state.isLoading = true;
+      if (state.isLoading === 'idle') {
+        state.isLoading = 'pending';
+      }
     });
     builder.addCase(fetchNewBooks.fulfilled, (state, { payload }) => {
-      state.isLoading = false;
-      state.books.push(...payload.books);
+      if (state.isLoading === 'pending') {
+        state.isLoading = 'succeeded';
+        state.books.push(...payload.books);
+      }
     });
     builder.addCase(fetchNewBooks.rejected, (state, { payload }) => {
       if (payload) {
-        state.isLoading = false;
+        state.isLoading = 'failed';
         state.error = payload;
       }
     });
