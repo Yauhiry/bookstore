@@ -1,4 +1,4 @@
-import { PageTitle } from 'components';
+import { BookList, PageTitle } from 'components';
 import { useEffect } from 'react';
 import { selectNewBooks } from 'selectors';
 import { fetchNewBooks, useAppDispatch, useAppSelector } from 'store';
@@ -14,6 +14,7 @@ export const HomePage = () => {
   return (
     <div>
       <PageTitle text="New Releases Books" />
+      <BookList books={books} />
     </div>
   );
 };
