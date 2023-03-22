@@ -10,7 +10,7 @@ import {
   SignUpPage,
 } from 'pages';
 import { MainTemplate } from '../templates/MainTemplate';
-import { ROUTE } from './routes';
+import { ROUTE } from 'router';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
