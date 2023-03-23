@@ -1,11 +1,11 @@
-import { AccountPage } from './AccountPage';
-import { BookPage } from './BookPage';
-import { CartPage } from './CartPage';
-import { FavoritesPage } from './FavoritesPage';
-import { HomePage } from './HomePage';
-import { SearchPage } from './SearchPage';
-import { SignInPage } from './SignInPage';
-import { SignUpPage } from './SignUpPage';
+import { AccountPage } from './AccountPage/AccountPage';
+import { BookPage } from './BookPage/BookPage';
+import { CartPage } from './CartPage/CartPage';
+import { FavoritesPage } from './FavoritesPage/FavoritesPage';
+import { HomePage } from './HomePage/HomePage';
+import { SearchPage } from './SearchPage/SearchPage';
+import { SignInPage } from './SignInPage/SignInPage';
+import { SignUpPage } from './SignUpPage/SignUpPage';
 
 export {
   AccountPage,

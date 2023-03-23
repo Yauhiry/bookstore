@@ -1,7 +1,6 @@
 import { BookList, PageTitle } from 'components';
 import { useEffect } from 'react';
-import { selectNewBooks } from 'selectors';
-import { fetchNewBooks, useAppDispatch, useAppSelector } from 'store';
+import { fetchNewBooks, selectNewBooks, useAppDispatch, useAppSelector } from 'store';
 
 export const HomePage = () => {
   const { books } = useAppSelector(selectNewBooks);

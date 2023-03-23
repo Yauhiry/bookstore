@@ -1,6 +1,6 @@
 import { PageTitle } from './atoms/PageTitle/PageTitle';
-import { Footer } from './molecules/Footer/Footer';
-import { Nav } from './molecules/Nav/Nav';
+import { Footer } from './organisms/Footer/Footer';
+import { Nav } from './organisms/Nav/Nav';
 import { BookList } from './molecules/BookList/BookList';
 import { BookItem } from './molecules/BookItem/BookItem';
 

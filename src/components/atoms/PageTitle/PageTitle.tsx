@@ -1,5 +1,3 @@
-import React from 'react';
-import { Interface } from 'readline';
 import { StyledPageTitle } from './Styles';
 
 interface PageTitleProps {
