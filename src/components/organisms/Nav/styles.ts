@@ -17,11 +17,3 @@ export const LinkGroup = styled.div`
   grid-gap: 40px;
   padding: 16px;
 `;
-
-export const Input = styled.input`
-  justify-self: center;
-  width: clamp(200px, 100%, 542px);
-  padding: 10px 20px;
-  font-size: 16px;
-  line-height: 32px;
-`;

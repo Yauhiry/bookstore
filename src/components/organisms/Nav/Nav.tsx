@@ -1,7 +1,8 @@
 import { AccountIcon, CartIcon, FavoritesIcon, LogoIcon } from 'assets';
+import { SearchForm } from 'components/molecules/SearchForm/SearchForm';
 import { Link } from 'react-router-dom';
 import { ROUTE } from '../../../router/routes';
-import { Input, LinkGroup, StyledNav } from './styles';
+import { LinkGroup, StyledNav } from './styles';
 
 export const Nav = () => {
   return (
@@ -9,7 +10,7 @@ export const Nav = () => {
       <Link to={ROUTE.HOME}>
         <LogoIcon />
       </Link>
-      <Input placeholder="Search" />
+      <SearchForm />
       <LinkGroup>
         <Link to={ROUTE.FAVORITES}>
           <FavoritesIcon />
