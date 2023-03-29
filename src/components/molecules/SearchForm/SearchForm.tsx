@@ -1,10 +1,17 @@
 import { SearchIcon } from 'assets';
-import { SearchButton, SearchInput, StyledSearchForm } from './Styles';
+import { Input } from 'components';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { SearchButton, StyledSearchForm } from './styles';
+import { SearchFormValue } from 'types';
 
 export const SearchForm = () => {
+  const { register, handleSubmit } = useForm<SearchFormValue>();
+
+  const onSubmit: SubmitHandler<SearchFormValue> = ({ searchValue }: SearchFormValue) => {};
+
   return (
-    <StyledSearchForm>
-      <SearchInput placeholder="Search" />
+    <StyledSearchForm onSubmit={handleSubmit(onSubmit)}>
+      <Input name="searchValue" type="text" placeholder="Search" register={register} />
       <SearchButton type="submit">
         <SearchIcon />
       </SearchButton>
