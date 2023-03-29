@@ -6,6 +6,10 @@ body, div, h1, h2, h3, ul, li, input, form, button, span, a {
     margin: 0;
     box-sizing: border-box;
   }
+  html {
+    width:100vw;
+    overflow-x:hidden;
+}
   body {
     font-family: 'Roboto', sans-serif;
   }
@@ -14,6 +18,7 @@ body, div, h1, h2, h3, ul, li, input, form, button, span, a {
   }
   button {
     border: none;
+    cursor: pointer;
   }
   a {
     display: flex;
