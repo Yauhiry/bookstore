@@ -4,5 +4,7 @@ import { Nav } from './organisms/Nav/Nav';
 import { BookList } from './molecules/BookList/BookList';
 import { BookItem } from './molecules/BookItem/BookItem';
 import { SearchForm } from './molecules/SearchForm/SearchForm';
+import { BackButton } from './atoms/BackButton/BackButton';
+import { Header } from './molecules/Header/Header';
 
-export { PageTitle, Footer, Nav, BookList, BookItem, SearchForm };
+export { PageTitle, Footer, Nav, BookList, BookItem, SearchForm, BackButton, Header };
