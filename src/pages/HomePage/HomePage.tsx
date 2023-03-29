@@ -12,7 +12,7 @@ export const HomePage = () => {
 
   return (
     <div>
-      <PageTitle text="New Releases Books" />
+      <PageTitle title="New Releases Books" />
       <BookList books={books} />
     </div>
   );

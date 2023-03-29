@@ -1,9 +1,9 @@
-import { StyledPageTitle } from './Styles';
+import { StyledPageTitle } from './styles';
 
 interface PageTitleProps {
-  text: string;
+  title: string;
 }
 
-export const PageTitle = ({ text }: PageTitleProps) => {
-  return <StyledPageTitle>{text}</StyledPageTitle>;
+export const PageTitle = ({ title }: PageTitleProps) => {
+  return <StyledPageTitle>{title}</StyledPageTitle>;
 };
