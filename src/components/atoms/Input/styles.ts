@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { COLOR, TYPOGRAPHY } from 'ui';
+import styled from "styled-components";
+import { COLOR, TYPOGRAPHY } from "ui";
 
-export const StyledInput = styled.input`
+const StyledInput = styled.input`
   width: 100%;
   padding: 12px 60px 10px 20px;
   ${TYPOGRAPHY.B1};
@@ -13,3 +13,5 @@ export const StyledInput = styled.input`
     outline: 1px solid ${COLOR.GRAY};
   }
 `;
+
+export { StyledInput };

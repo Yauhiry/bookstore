@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const StyledBackButton = styled.button`
+const StyledBackButton = styled.button`
   display: flex;
   padding: 4px 0;
   background: none;
 `;
+
+export { StyledBackButton };

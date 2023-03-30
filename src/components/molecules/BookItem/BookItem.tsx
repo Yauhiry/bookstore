@@ -1,7 +1,7 @@
-import { generatePath } from 'react-router-dom';
-import { ROUTE } from 'router';
-import { Book } from 'types';
-import { StyledBookItem, StyledLink, Image, Title, Subtitle, Price } from './styles';
+import { generatePath } from "react-router-dom";
+import { ROUTE } from "router";
+import { Book } from "types";
+import { StyledBookItem, StyledLink, Image, Title, Subtitle, Price } from "./styles";
 
 interface BookItemProps {
   book: Book;

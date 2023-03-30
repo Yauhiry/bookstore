@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import {
   AccountPage,
   BookPage,
@@ -8,9 +8,9 @@ import {
   SearchPage,
   SignInPage,
   SignUpPage,
-} from 'pages';
-import { MainTemplate } from '../templates/MainTemplate';
-import { ROUTE } from 'router';
+} from "pages";
+import { MainTemplate } from "templates";
+import { ROUTE } from "router";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,7 +23,7 @@ export const router = createBrowserRouter(
       <Route path={ROUTE.SEARCH} element={<SearchPage />} />
       <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
       <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
-    </Route>
+    </Route>,
   ),
-  { basename: '/bookstore' }
+  { basename: "/bookstore" },
 );

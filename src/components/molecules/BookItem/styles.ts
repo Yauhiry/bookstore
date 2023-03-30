@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { COLOR, TYPOGRAPHY } from 'ui';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { COLOR, TYPOGRAPHY } from "ui";
 
-export const StyledBookItem = styled.li`
+const StyledBookItem = styled.li`
   max-width: 352px;
   transition: 0.3s;
   &:hover {
@@ -11,18 +11,18 @@ export const StyledBookItem = styled.li`
   }
 `;
 
-export const StyledLink = styled(Link)`
+const StyledLink = styled(Link)`
   display: grid;
 `;
 
-export const Image = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 254px;
   object-fit: contain;
   background: ${COLOR.BLUE};
 `;
 
-export const Title = styled.h3`
+const Title = styled.h3`
   ${TYPOGRAPHY.H3}
   display: -webkit-box;
   height: 84px;
@@ -32,7 +32,7 @@ export const Title = styled.h3`
   overflow: hidden;
 `;
 
-export const Subtitle = styled.span`
+const Subtitle = styled.span`
   display: -webkit-box;
   ${TYPOGRAPHY.B2}
   height: 54px;
@@ -42,7 +42,9 @@ export const Subtitle = styled.span`
   overflow: hidden;
 `;
 
-export const Price = styled.span`
+const Price = styled.span`
   ${TYPOGRAPHY.H3}
   padding-top: 16px;
 `;
+
+export { StyledBookItem, StyledLink, Image, Title, Subtitle, Price };

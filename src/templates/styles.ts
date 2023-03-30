@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const StyledMainTemplate = styled.div`
+const StyledMainTemplate = styled.div`
   display: grid;
   justify-items: center;
 `;
 
-export const Container = styled.div`
+const Container = styled.div`
   display: grid;
   grid-gap: 72px;
   grid-template-rows: auto 1fr auto;
@@ -13,3 +13,5 @@ export const Container = styled.div`
   min-height: 100vh;
   padding: 0 40px;
 `;
+
+export { StyledMainTemplate, Container };

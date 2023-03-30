@@ -1,10 +1,11 @@
-import { InputHTMLAttributes } from 'react';
-import { UseFormRegister } from 'react-hook-form';
-import { StyledInput } from './styles';
+import { InputHTMLAttributes } from "react";
+import { UseFormRegister } from "react-hook-form";
+import { FormValue } from "types";
+import { StyledInput } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  register: UseFormRegister<HTMLInputElement>;
-  name: 'searchValue';
+  register: UseFormRegister<FormValue>;
+  name: "searchValue";
 }
 
 export const Input = ({ name, placeholder, type, register }: InputProps) => {

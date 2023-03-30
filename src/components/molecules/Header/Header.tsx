@@ -1,6 +1,6 @@
-import { BackButton, PageTitle } from 'components';
+import { BackButton, PageTitle } from "components";
 
-import { StyledHeader } from './styles';
+import { StyledHeader } from "./styles";
 
 interface HeaderProps {
   title: string;

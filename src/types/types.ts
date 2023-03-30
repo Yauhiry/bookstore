@@ -34,3 +34,7 @@ export interface ResponseBooks {
   error: string;
   total: string;
 }
+
+export interface FormValue {
+  [name: string]: string;
+}

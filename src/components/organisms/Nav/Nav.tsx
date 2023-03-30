@@ -1,8 +1,8 @@
-import { AccountIcon, CartIcon, FavoritesIcon, LogoIcon } from 'assets';
-import { SearchForm } from 'components/molecules/SearchForm/SearchForm';
-import { Link } from 'react-router-dom';
-import { ROUTE } from '../../../router/routes';
-import { LinkGroup, StyledNav } from './styles';
+import { AccountIcon, CartIcon, FavoritesIcon, LogoIcon } from "assets";
+import { SearchForm } from "components";
+import { Link } from "react-router-dom";
+import { ROUTE } from "router";
+import { LinkGroup, StyledNav } from "./styles";
 
 export const Nav = () => {
   return (

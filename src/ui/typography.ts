@@ -1,8 +1,8 @@
-import { css } from 'styled-components';
-import { COLOR } from './colors';
+import { css } from "styled-components";
+import { COLOR } from "./colors";
 
 const H1 = css`
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
   font-size: 56px;
@@ -11,7 +11,7 @@ const H1 = css`
 `;
 
 const H2 = css`
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -20,7 +20,7 @@ const H2 = css`
 `;
 
 const H3 = css`
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -29,7 +29,7 @@ const H3 = css`
 `;
 
 const S1 = css`
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -38,7 +38,7 @@ const S1 = css`
 `;
 
 const B1 = css`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -47,7 +47,7 @@ const B1 = css`
 `;
 
 const B2 = css`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

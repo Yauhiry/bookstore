@@ -1,3 +1,3 @@
-import { Book, ResponseBooks, BookDetails } from './types';
+import { Book, ResponseBooks, BookDetails, FormValue } from "./types";
 
-export type { Book, ResponseBooks, BookDetails };
+export type { Book, ResponseBooks, BookDetails, FormValue };

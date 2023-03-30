@@ -1,6 +1,6 @@
-import { Book } from 'types';
-import { BookItem } from '../BookItem/BookItem';
-import { StyledBookList } from './styles';
+import { BookItem } from "components";
+import { Book } from "types";
+import { StyledBookList } from "./styles";
 
 interface BookListProps {
   books: Book[];

@@ -1,9 +1,8 @@
-import { Header } from 'components';
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { selectBookDetails, useAppDispatch, useAppSelector } from 'store';
-import { fetchBookDetails } from 'store/features/detailsBookSlice';
-import { BookDetails, StyledBookPage, Image, BookInfo, Button, Left } from './styles';
+import { Header } from "components";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { fetchBookDetails, selectBookDetails, useAppDispatch, useAppSelector } from "store";
+import { BookDetails, StyledBookPage, Image, BookInfo, Button, Left } from "./styles";
 
 export const BookPage = () => {
   const { book } = useAppSelector(selectBookDetails);
