@@ -4,24 +4,27 @@ import { COLOR } from "./colors";
 const H1 = css`
   font-family: "Bebas Neue";
   font-style: normal;
+  text-transform: uppercase;
   font-weight: 400;
-  font-size: 56px;
-  line-height: 64px;
+  font-size: 32px;
+  line-height: 44px;
   color: ${COLOR.DARK};
 `;
 
 const H2 = css`
   font-family: "Bebas Neue";
   font-style: normal;
+  text-transform: uppercase;
   font-weight: 400;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 28px;
+  line-height: 40px;
   color: ${COLOR.DARK};
 `;
 
 const H3 = css`
   font-family: "Bebas Neue";
   font-style: normal;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
@@ -31,10 +34,11 @@ const H3 = css`
 const S1 = css`
   font-family: "Bebas Neue";
   font-style: normal;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  color: ${COLOR.DARK};
+  color: ${COLOR.WHITE};
 `;
 
 const B1 = css`

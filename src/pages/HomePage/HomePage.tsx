@@ -1,6 +1,7 @@
-import { BookList, PageTitle } from "components";
+import { BookList, PageTitle, SubscribeForm } from "components";
 import { useEffect } from "react";
 import { fetchNewBooks, selectNewBooks, useAppDispatch, useAppSelector } from "store";
+import { Container, StyledHomePage } from "./styles";
 
 export const HomePage = () => {
   const { books } = useAppSelector(selectNewBooks);
@@ -11,9 +12,12 @@ export const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <StyledHomePage>
       <PageTitle title="New Releases Books" />
-      <BookList books={books} />
-    </div>
+      <Container>
+        <BookList books={books} />
+        <SubscribeForm />
+      </Container>
+    </StyledHomePage>
   );
 };

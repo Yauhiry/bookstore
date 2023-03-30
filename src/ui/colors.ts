@@ -2,7 +2,7 @@ export enum COLOR {
   DARK = "#313037",
   PRIMARY = "#5B5A62",
   SECONDARY = "#A8A8A8",
-  WHITE = "#AFB2B666",
+  WHITE = "#FFFFFF",
   GRAY = "#E7E7E7",
   LIGHT = "#F7F7F7",
   RED = "#FC857F",

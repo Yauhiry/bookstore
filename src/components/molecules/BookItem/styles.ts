@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { COLOR, TYPOGRAPHY } from "ui";
 
 const StyledBookItem = styled.li`
-  max-width: 352px;
+  width: 100%;
   transition: 0.3s;
   &:hover {
-    transform: translate(0, -10px);
-    box-shadow: 10px 10px 10px -10px #86878b;
+    transform: scale(1.04);
+    /* transform: translate(0, -10px);
+    box-shadow: 10px 10px 10px -10px #86878b; */
   }
 `;
 

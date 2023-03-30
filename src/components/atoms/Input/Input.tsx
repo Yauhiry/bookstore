@@ -5,7 +5,7 @@ import { StyledInput } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegister<FormValue>;
-  name: "searchValue";
+  name: "searchValue" | "subscribeEmail";
 }
 
 export const Input = ({ name, placeholder, type, register }: InputProps) => {
