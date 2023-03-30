@@ -1,14 +1,21 @@
 {
   "files": {
-    "main.js": "/bookstore/static/js/main.2082e625.js",
-    "static/media/logo-icon.svg": "/bookstore/static/media/logo-icon.4df062493d3c8a2d9a244c508c206884.svg",
-    "static/media/favorites-icon.svg": "/bookstore/static/media/favorites-icon.8864cf0bfeaa01fac3a2fb3b59b92b94.svg",
+    "main.js": "/bookstore/static/js/main.988635e0.js",
+    "static/media/sun-icon.svg": "/bookstore/static/media/sun-icon.ea609f6b1bb596cd8476539cdb406046.svg",
+    "static/media/logo-icon.svg": "/bookstore/static/media/logo-icon.7cb24bfd069f745101cee82e86f25e00.svg",
+    "static/media/arrow-left-icon.svg": "/bookstore/static/media/arrow-left-icon.0a76a28f6b68f6dcc1635b73fc067cfc.svg",
+    "static/media/favorites-icon.svg": "/bookstore/static/media/favorites-icon.5793a894d7fe4f45ffe2ccd3fbe9bb65.svg",
     "index.html": "/bookstore/index.html",
-    "static/media/cart-icon.svg": "/bookstore/static/media/cart-icon.291776166f59fef865d350aaa5d72385.svg",
-    "static/media/account-icon.svg": "/bookstore/static/media/account-icon.f95ce053779a6201d74bbfa54c39de4c.svg",
-    "main.2082e625.js.map": "/bookstore/static/js/main.2082e625.js.map"
+    "static/media/cross-icon.svg": "/bookstore/static/media/cross-icon.5e3a8b826e48de8d22ae660d3ca06f76.svg",
+    "static/media/cart-icon.svg": "/bookstore/static/media/cart-icon.a51a4fa6dc3e32e1f120122e08524ef9.svg",
+    "static/media/moon-icon.svg": "/bookstore/static/media/moon-icon.797b7e43e93a24303c2adf689abf3acb.svg",
+    "static/media/search-icon.svg": "/bookstore/static/media/search-icon.418dccf9c6c8b0954454ca888587b644.svg",
+    "static/media/account-icon.svg": "/bookstore/static/media/account-icon.374f708c85fcf8816cf4227ff19d9d9b.svg",
+    "static/media/burger-menu-icon.svg": "/bookstore/static/media/burger-menu-icon.5754cb6d5fb7aa497da115a9f58c9ba8.svg",
+    "static/media/dropdown-chevron-icon.svg": "/bookstore/static/media/dropdown-chevron-icon.c3d3be48ddefbf64d58993c807dec153.svg",
+    "main.988635e0.js.map": "/bookstore/static/js/main.988635e0.js.map"
   },
   "entrypoints": [
-    "static/js/main.2082e625.js"
+    "static/js/main.988635e0.js"
   ]
 }
