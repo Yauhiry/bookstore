@@ -1,4 +1,4 @@
-import { StyledFooter, Text } from "./temp";
+import { StyledFooter, Text } from "./styles";
 
 export const Footer = () => {
   return (

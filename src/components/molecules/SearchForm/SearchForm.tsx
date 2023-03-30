@@ -1,7 +1,7 @@
 import { SearchIcon } from "assets";
 import { Input } from "components";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { SearchButton, StyledSearchForm } from "./temp";
+import { SearchButton, StyledSearchForm } from "./styles";
 import { FormValue } from "types";
 
 export const SearchForm = () => {

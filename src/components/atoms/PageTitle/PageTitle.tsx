@@ -1,4 +1,4 @@
-import { StyledPageTitle } from "./temp";
+import { StyledPageTitle } from "./styles";
 
 interface PageTitleProps {
   title: string;
