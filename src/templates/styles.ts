@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { MEDIA } from "ui";
+import { COLOR, MEDIA } from "ui";
 
 const StyledMainTemplate = styled.div`
   display: grid;
   justify-items: center;
+  background: ${COLOR.WHITE};
 `;
 
 const Container = styled.div`

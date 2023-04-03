@@ -1,36 +1,48 @@
-import { AccountIcon, BurgerMenuIcon, CartIcon, FavoritesIcon, LogoIcon, MoonIcon } from "assets";
-import { SearchForm } from "components";
+import { SearchForm, ThemeButton } from "components";
 import { useWindowSize } from "hooks";
 import { Link } from "react-router-dom";
 import { ROUTE } from "router";
-import { LinkGroup, StyledNav } from "./styles";
+import {
+  LinkGroup,
+  StyledAccountIcon,
+  StyledBurgerMenuIcon,
+  StyledCartIcon,
+  StyledFavoritesIcon,
+  StyledLogoIcon,
+  StyledNav,
+} from "./styles";
 
-export const Nav = () => {
+interface NavProps {
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+}
+
+export const Nav = ({ theme, toggleTheme }: NavProps) => {
   const { width = 0 } = useWindowSize();
-  const mediaSize = width > 992;
+  const mediaSize = width >= 992;
 
   return (
     <StyledNav>
       <Link to={ROUTE.HOME}>
-        <LogoIcon />
+        <StyledLogoIcon />
       </Link>
       {mediaSize && <SearchForm />}
       <LinkGroup>
         {mediaSize && (
           <Link to={ROUTE.FAVORITES}>
-            <FavoritesIcon />
+            <StyledFavoritesIcon />
           </Link>
         )}
         {mediaSize && (
           <Link to={ROUTE.CART}>
-            <CartIcon />
+            <StyledCartIcon />
           </Link>
         )}
         <Link to={ROUTE.ACCOUNT}>
-          <AccountIcon />
+          <StyledAccountIcon />
         </Link>
-        {mediaSize && <MoonIcon />}
-        {!mediaSize && <BurgerMenuIcon />}
+        {mediaSize && <ThemeButton theme={theme} toggleTheme={toggleTheme} />}
+        {!mediaSize && <StyledBurgerMenuIcon />}
       </LinkGroup>
     </StyledNav>
   );

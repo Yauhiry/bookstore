@@ -24,8 +24,8 @@ const Image = styled.img`
 `;
 
 const Title = styled.h3`
-  ${TYPOGRAPHY.H3}
   display: -webkit-box;
+  ${TYPOGRAPHY.H3}
   height: 84px;
   padding-top: 20px;
   -webkit-line-clamp: 2;

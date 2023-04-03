@@ -9,6 +9,7 @@ import { SearchForm } from "./molecules/SearchForm/SearchForm";
 import { SubscribeForm } from "./molecules/SubscribeForm/SubscribeForm";
 import { BackButton } from "./atoms/BackButton/BackButton";
 import { Header } from "./molecules/Header/Header";
+import { ThemeButton } from "./atoms/ThemeButton/ThemeButton";
 
 export {
   PageTitle,
@@ -22,4 +23,5 @@ export {
   SubscribeForm,
   BackButton,
   Header,
+  ThemeButton,
 };

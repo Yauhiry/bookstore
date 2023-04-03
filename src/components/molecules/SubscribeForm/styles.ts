@@ -5,7 +5,7 @@ const StyledSubscribeForm = styled.form`
   display: grid;
   grid-gap: 24px 0;
   padding: 24px;
-  background: ${COLOR.PURPLE};
+  background: ${COLOR.PRIMARY};
   ${MEDIA.MD} {
     grid-template-columns: 1fr 160px;
     grid-template-rows: auto auto;

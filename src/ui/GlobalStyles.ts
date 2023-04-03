@@ -1,15 +1,16 @@
 import { createGlobalStyle } from "styled-components";
+import { themeColors } from "ui";
 
 const GlobalStyles = createGlobalStyle`
 body, div, h1, h2, h3, ul, li, input, form, button, span, p, a {
-    padding: 0;
+  padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
   html {
     width:100vw;
     overflow-x:hidden;
-}
+  }
   body {
     font-family: 'Roboto', sans-serif;
   }
@@ -24,6 +25,7 @@ body, div, h1, h2, h3, ul, li, input, form, button, span, p, a {
     display: flex;
     text-decoration: none;
   }
-`;
+  ${themeColors};
+  `;
 
 export { GlobalStyles };

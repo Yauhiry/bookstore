@@ -5,6 +5,7 @@ const StyledInput = styled.input`
   width: 100%;
   padding: 12px 60px 10px 20px;
   ${TYPOGRAPHY.B1};
+  background: ${COLOR.WHITE};
   border: 1px solid ${COLOR.GRAY};
   &::placeholder {
     ${TYPOGRAPHY.B2}
