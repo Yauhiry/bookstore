@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/bookstore/static/js/main.a4450e8d.js",
+    "main.js": "/bookstore/static/js/main.18ac0af0.js",
     "static/media/sun-icon.svg": "/bookstore/static/media/sun-icon.ea609f6b1bb596cd8476539cdb406046.svg",
     "static/media/logo-icon.svg": "/bookstore/static/media/logo-icon.7cb24bfd069f745101cee82e86f25e00.svg",
     "static/media/arrow-left-icon.svg": "/bookstore/static/media/arrow-left-icon.0a76a28f6b68f6dcc1635b73fc067cfc.svg",
@@ -13,9 +13,9 @@
     "static/media/account-icon.svg": "/bookstore/static/media/account-icon.374f708c85fcf8816cf4227ff19d9d9b.svg",
     "static/media/burger-menu-icon.svg": "/bookstore/static/media/burger-menu-icon.5754cb6d5fb7aa497da115a9f58c9ba8.svg",
     "static/media/dropdown-chevron-icon.svg": "/bookstore/static/media/dropdown-chevron-icon.c3d3be48ddefbf64d58993c807dec153.svg",
-    "main.a4450e8d.js.map": "/bookstore/static/js/main.a4450e8d.js.map"
+    "main.18ac0af0.js.map": "/bookstore/static/js/main.18ac0af0.js.map"
   },
   "entrypoints": [
-    "static/js/main.a4450e8d.js"
+    "static/js/main.18ac0af0.js"
   ]
 }
