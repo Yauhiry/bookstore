@@ -18,7 +18,9 @@ const SearchButton = styled.button`
 `;
 
 const StyledSearchIcon = styled(SearchIcon)`
-  fill: ${COLOR.DARK};
+  path {
+    fill: ${COLOR.DARK};
+  }
 `;
 
 export { StyledSearchForm, SearchButton, StyledSearchIcon };
