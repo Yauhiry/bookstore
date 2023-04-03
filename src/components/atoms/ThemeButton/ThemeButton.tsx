@@ -1,7 +1,8 @@
+import { Theme } from "types";
 import { StyledMoonIcon, StyledSunIcon, StyledThemeButton } from "./styles";
 
 interface ThemeButtonProps {
-  theme: "light" | "dark";
+  theme: Theme;
   toggleTheme: () => void;
 }
 

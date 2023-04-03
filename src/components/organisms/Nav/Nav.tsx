@@ -11,9 +11,10 @@ import {
   StyledLogoIcon,
   StyledNav,
 } from "./styles";
+import { Theme } from "types";
 
 interface NavProps {
-  theme: "light" | "dark";
+  theme: Theme;
   toggleTheme: () => void;
 }
 

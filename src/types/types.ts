@@ -38,3 +38,5 @@ export interface ResponseBooks {
 export interface FormValue {
   [name: string]: string;
 }
+
+export type Theme = "light" | "dark";
