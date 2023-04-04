@@ -9,6 +9,7 @@ import { ReactComponent as BurgerMenuIcon } from "./icons/burger-menu-icon.svg";
 import { ReactComponent as CrossIcon } from "./icons/cross-icon.svg";
 import { ReactComponent as SunIcon } from "./icons/sun-icon.svg";
 import { ReactComponent as MoonIcon } from "./icons/moon-icon.svg";
+import { ReactComponent as StarIcon } from "./icons/star-icon.svg";
 
 export {
   AccountIcon,
@@ -22,4 +23,5 @@ export {
   CrossIcon,
   SunIcon,
   MoonIcon,
+  StarIcon,
 };
