@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.js": "/bookstore/static/js/main.18ac0af0.js",
+    "main.js": "/bookstore/static/js/main.f6fb775c.js",
     "static/media/sun-icon.svg": "/bookstore/static/media/sun-icon.ea609f6b1bb596cd8476539cdb406046.svg",
     "static/media/logo-icon.svg": "/bookstore/static/media/logo-icon.7cb24bfd069f745101cee82e86f25e00.svg",
     "static/media/arrow-left-icon.svg": "/bookstore/static/media/arrow-left-icon.0a76a28f6b68f6dcc1635b73fc067cfc.svg",
+    "static/media/star-icon.svg": "/bookstore/static/media/star-icon.b70dc5bf557af41f155a0dbe0c1029c1.svg",
     "static/media/favorites-icon.svg": "/bookstore/static/media/favorites-icon.5793a894d7fe4f45ffe2ccd3fbe9bb65.svg",
     "index.html": "/bookstore/index.html",
     "static/media/cross-icon.svg": "/bookstore/static/media/cross-icon.5e3a8b826e48de8d22ae660d3ca06f76.svg",
@@ -13,9 +14,9 @@
     "static/media/account-icon.svg": "/bookstore/static/media/account-icon.374f708c85fcf8816cf4227ff19d9d9b.svg",
     "static/media/burger-menu-icon.svg": "/bookstore/static/media/burger-menu-icon.5754cb6d5fb7aa497da115a9f58c9ba8.svg",
     "static/media/dropdown-chevron-icon.svg": "/bookstore/static/media/dropdown-chevron-icon.c3d3be48ddefbf64d58993c807dec153.svg",
-    "main.18ac0af0.js.map": "/bookstore/static/js/main.18ac0af0.js.map"
+    "main.f6fb775c.js.map": "/bookstore/static/js/main.f6fb775c.js.map"
   },
   "entrypoints": [
-    "static/js/main.18ac0af0.js"
+    "static/js/main.f6fb775c.js"
   ]
 }
