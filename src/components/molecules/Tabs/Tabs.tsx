@@ -24,7 +24,10 @@ export const Tabs = ({ description, authors }: TabsProps) => {
         </TabSelector>
       </NavTabs>
       <TabPanels>
-        <StyledTabPanel hidden={selectedTab !== "description"}>{description}</StyledTabPanel>
+        <StyledTabPanel
+          hidden={selectedTab !== "description"}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
         <StyledTabPanel hidden={selectedTab !== "authors"}>{authors}</StyledTabPanel>
       </TabPanels>
     </StyledTabs>
