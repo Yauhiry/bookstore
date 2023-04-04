@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { COLOR } from "./colors";
+import { COLOR, MEDIA } from "ui";
 
 const H1 = css`
   font-family: "Bebas Neue";
@@ -9,6 +9,10 @@ const H1 = css`
   font-size: 32px;
   line-height: 44px;
   color: ${COLOR.DARK};
+  ${MEDIA.MD} {
+    font-size: 56px;
+    line-height: 64px;
+  }
 `;
 
 const H2 = css`
@@ -16,8 +20,8 @@ const H2 = css`
   font-style: normal;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 40px;
+  font-size: 40px;
+  line-height: 60px;
   color: ${COLOR.DARK};
 `;
 
