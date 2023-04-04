@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { themeReducer, bookDetailsReducer, newBooksReducer } from "store";
+import { themeReducer, bookDetailsReducer, newBooksReducer, searchBooksReducer } from "store";
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
     newBooks: newBooksReducer,
     bookDetails: bookDetailsReducer,
+    searchBooks: searchBooksReducer,
   },
 });
 
