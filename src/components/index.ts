@@ -7,9 +7,12 @@ import { BookItem } from "./molecules/BookItem/BookItem";
 import { Input } from "./atoms/Input/Input";
 import { SearchForm } from "./molecules/SearchForm/SearchForm";
 import { SubscribeForm } from "./molecules/SubscribeForm/SubscribeForm";
-import { BackButton } from "./atoms/BackButton/BackButton";
 import { Header } from "./molecules/Header/Header";
 import { ThemeButton } from "./atoms/ThemeButton/ThemeButton";
+import { StarsRating } from "./molecules/Rating/StarsRating";
+import { DetailItem } from "./atoms/DetailItem/DetailItem";
+import { Tabs } from "./molecules/Tabs/Tabs";
+import { TabSelector } from "./atoms/TabSelector/TabSelector";
 
 export {
   PageTitle,
@@ -21,7 +24,10 @@ export {
   Input,
   SearchForm,
   SubscribeForm,
-  BackButton,
   Header,
   ThemeButton,
+  StarsRating,
+  DetailItem,
+  Tabs,
+  TabSelector,
 };
