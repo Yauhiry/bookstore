@@ -2,7 +2,7 @@ import { Input } from "components";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { SearchButton, StyledSearchForm, StyledSearchIcon } from "./styles";
 import { FormValue } from "types";
-import { useNavigate } from "react-router-dom";
+import { generatePath, useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 import { setSearchValue, useAppDispatch } from "store";
 
@@ -12,8 +12,10 @@ export const SearchForm = () => {
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<FormValue> = ({ searchValue }: FormValue) => {
-    navigate(ROUTE.SEARCH);
-    dispatch(setSearchValue(searchValue));
+    if (searchValue) {
+      navigate(generatePath(ROUTE.SEARCH, { searchValue, currentPage: "1" }));
+      dispatch(setSearchValue(searchValue));
+    }
   };
 
   return (

@@ -3,7 +3,7 @@ import { COLOR, TYPOGRAPHY } from "ui";
 
 const StyledInput = styled.input`
   width: 100%;
-  padding: 12px 60px 10px 20px;
+  padding: 16px 60px 14px 20px;
   ${TYPOGRAPHY.B1};
   background: ${COLOR.WHITE};
   border: 1px solid ${COLOR.GRAY};
