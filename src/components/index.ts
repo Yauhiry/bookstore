@@ -13,6 +13,7 @@ import { StarsRating } from "./molecules/Rating/StarsRating";
 import { DetailItem } from "./atoms/DetailItem/DetailItem";
 import { Tabs } from "./molecules/Tabs/Tabs";
 import { TabSelector } from "./atoms/TabSelector/TabSelector";
+import { Pagination } from "./molecules/Pagination/Pagination";
 
 export {
   PageTitle,
@@ -30,4 +31,5 @@ export {
   DetailItem,
   Tabs,
   TabSelector,
+  Pagination,
 };

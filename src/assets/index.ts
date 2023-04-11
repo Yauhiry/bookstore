@@ -10,6 +10,7 @@ import { ReactComponent as CrossIcon } from "./icons/cross-icon.svg";
 import { ReactComponent as SunIcon } from "./icons/sun-icon.svg";
 import { ReactComponent as MoonIcon } from "./icons/moon-icon.svg";
 import { ReactComponent as StarIcon } from "./icons/star-icon.svg";
+import { ReactComponent as ArrowUpIcon } from "./icons/arrow-up-icon.svg";
 
 export {
   AccountIcon,
@@ -24,4 +25,5 @@ export {
   SunIcon,
   MoonIcon,
   StarIcon,
+  ArrowUpIcon,
 };

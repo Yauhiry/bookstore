@@ -4,28 +4,33 @@ import { Book, ResponseBooks } from "types";
 
 interface SearchBooksState {
   books: Book[];
+  page: string;
+  total: string;
   isLoading: "idle" | "pending" | "succeeded" | "failed";
   error: string | null;
   searchValue: string;
 }
 
-export const fetchSearchBooks = createAsyncThunk<ResponseBooks, string, { rejectValue: string }>(
-  "searchBooks/fetchSearchBooks",
-  async (searchValue, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.get<ResponseBooks>(
-        `https://api.itbook.store/1.0/search/${searchValue}`,
-      );
-      return data;
-    } catch (error) {
-      const { message } = error as AxiosError;
-      return rejectWithValue(message);
-    }
-  },
-);
+export const fetchSearchBooks = createAsyncThunk<
+  ResponseBooks,
+  { searchValue: string; currentPage: string },
+  { rejectValue: string }
+>("searchBooks/fetchSearchBooks", async (params, { rejectWithValue }) => {
+  try {
+    const { data } = await axios.get<ResponseBooks>(
+      `https://api.itbook.store/1.0/search/${params.searchValue}/${params.currentPage}`,
+    );
+    return data;
+  } catch (error) {
+    const { message } = error as AxiosError;
+    return rejectWithValue(message);
+  }
+});
 
 const initialState: SearchBooksState = {
   books: [] as Book[],
+  page: "1",
+  total: "0",
   isLoading: "idle",
   error: null,
   searchValue: "",
@@ -44,7 +49,7 @@ const searchBooksSlice = createSlice({
         state.isLoading = "pending";
       }
       if (state.isLoading === "succeeded") {
-        state.books.length = 0;
+        state.books = [];
         state.isLoading = "pending";
       }
     });
@@ -52,6 +57,8 @@ const searchBooksSlice = createSlice({
       if (state.isLoading === "pending") {
         state.isLoading = "succeeded";
         state.books.push(...payload.books);
+        state.page = payload.page;
+        state.total = payload.total;
       }
     });
     builder.addCase(fetchSearchBooks.rejected, (state, { payload }) => {

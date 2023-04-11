@@ -34,6 +34,7 @@ export interface ResponseBooks {
   books: Book[];
   error: string;
   total: string;
+  page: string;
 }
 
 export interface FormValue {
