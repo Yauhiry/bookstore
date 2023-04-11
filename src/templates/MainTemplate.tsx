@@ -1,5 +1,5 @@
 import { Footer, Nav } from "components";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Container, StyledMainTemplate } from "./styles";
 import { selectTheme, setTheme, useAppDispatch, useAppSelector } from "store";
 import { useEffect } from "react";
@@ -24,6 +24,7 @@ export const MainTemplate = () => {
         <Outlet />
         <Footer />
       </Container>
+      <ScrollRestoration />
     </StyledMainTemplate>
   );
 };
