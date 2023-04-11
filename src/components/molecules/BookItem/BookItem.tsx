@@ -14,7 +14,7 @@ export const BookItem = ({ book: { image, title, subtitle, price, isbn13 } }: Bo
         <Image src={image} />
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
-        <Price>{price}</Price>
+        <Price>{price === "$0.00" ? "free" : price}</Price>
       </StyledLink>
     </StyledBookItem>
   );
