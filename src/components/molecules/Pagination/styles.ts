@@ -5,18 +5,23 @@ import { ArrowUpIcon } from "assets";
 import { Link } from "react-router-dom";
 
 const StyledPagination = styled.div`
+  display: grid;
+  grid-template-columns: 65px minmax(0, 450px) 65px;
+  justify-content: space-between;
   position: relative;
   padding-top: 36px;
   border-top: 1px solid ${COLOR.GRAY};
+  ${MEDIA.SM} {
+    grid-template-columns: 100px minmax(0, 450px) 100px;
+  }
 `;
 
+const ResponsivePaginationContainer = styled.div`
+  width: 100%;
+`;
 const StyledResponsivePagination = styled(ResponsivePagination)`
   display: flex;
   justify-content: center;
-  padding: 0 65px;
-  ${MEDIA.SM} {
-    padding: 0 100px;
-  }
 
   .page-item .page-link {
     position: relative;
@@ -38,9 +43,7 @@ const StyledResponsivePagination = styled(ResponsivePagination)`
 `;
 
 const PreviousPageLink = styled(Link)<{ $isActive: boolean }>`
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  justify-self: flex-start;
   display: flex;
   align-items: center;
   ${({ $isActive }) => ($isActive ? TYPOGRAPHY.B1 : TYPOGRAPHY.B2)};
@@ -50,9 +53,7 @@ const PreviousPageLink = styled(Link)<{ $isActive: boolean }>`
 `;
 
 const NextPageLink = styled(Link)<{ $isActive: boolean }>`
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  justify-self: flex-end;
   display: flex;
   align-items: center;
   ${({ $isActive }) => ($isActive ? TYPOGRAPHY.B1 : TYPOGRAPHY.B2)}
@@ -78,6 +79,7 @@ const ArrowRight = styled(ArrowUpIcon)`
 
 export {
   StyledPagination,
+  ResponsivePaginationContainer,
   StyledResponsivePagination,
   PreviousPageLink,
   NextPageLink,

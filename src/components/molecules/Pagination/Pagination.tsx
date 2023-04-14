@@ -4,6 +4,7 @@ import {
   ArrowRight,
   NextPageLink,
   PreviousPageLink,
+  ResponsivePaginationContainer,
   StyledPagination,
   StyledResponsivePagination,
 } from "./styles";
@@ -32,12 +33,14 @@ export const Pagination = ({ page, total }: PaginationProps) => {
         <ArrowLeft />
         {mediaSize && "Prev"}
       </PreviousPageLink>
-      <StyledResponsivePagination
-        current={+page}
-        total={actualTotalPages}
-        onPageChange={handlePageClick}
-        renderNav={false}
-      />
+      <ResponsivePaginationContainer>
+        <StyledResponsivePagination
+          current={+page}
+          total={actualTotalPages}
+          onPageChange={handlePageClick}
+          renderNav={false}
+        />
+      </ResponsivePaginationContainer>
       <NextPageLink
         to={`../${+page + 1}`}
         relative="path"
