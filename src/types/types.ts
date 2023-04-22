@@ -7,6 +7,10 @@ export interface Book {
   url: string;
 }
 
+export interface CartBook extends BookDetails {
+  amount: number;
+}
+
 export interface BookDetails {
   error: string;
   title: string;

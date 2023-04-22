@@ -35,6 +35,7 @@ const initialState: SearchBooksState = {
   error: null,
   searchValue: "",
 };
+
 const searchBooksSlice = createSlice({
   name: "searchBooks",
   initialState,

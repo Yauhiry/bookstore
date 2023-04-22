@@ -1,7 +1,13 @@
 import { Button, DetailItem, Header, StarsRating, SubscribeForm, Tabs } from "components";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchBookDetails, selectBookDetails, useAppDispatch, useAppSelector } from "store";
+import {
+  setCartItem,
+  fetchBookDetails,
+  selectBookDetails,
+  useAppDispatch,
+  useAppSelector,
+} from "store";
 import {
   BookDetails,
   StyledBookPage,
@@ -24,6 +30,10 @@ export const BookPage = () => {
   const [isMoreDetails, toggleMoreDetails] = useToggle();
 
   const { title, image, rating, price, authors, publisher, language, year, pages, desc } = book;
+
+  const handleClick = () => {
+    dispatch(setCartItem(book));
+  };
 
   useEffect(() => {
     isbn13 && dispatch(fetchBookDetails({ isbn13 }));
@@ -62,7 +72,7 @@ export const BookPage = () => {
                 )}
               </MoreWrapper>
             </DetailsList>
-            <Button type="button" text="Add to cart" />
+            <Button type="button" text="Add to cart" onClick={handleClick} />
           </BookInfo>
         </BookDetails>
         <Tabs description={desc} authors={authors} />

@@ -1,5 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { themeReducer, bookDetailsReducer, newBooksReducer, searchBooksReducer } from "store";
+import {
+  themeReducer,
+  bookDetailsReducer,
+  newBooksReducer,
+  searchBooksReducer,
+  cartReducer,
+} from "store";
 
 export const store = configureStore({
   reducer: {
@@ -7,6 +13,7 @@ export const store = configureStore({
     newBooks: newBooksReducer,
     bookDetails: bookDetailsReducer,
     searchBooks: searchBooksReducer,
+    cart: cartReducer,
   },
 });
 

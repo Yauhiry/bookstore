@@ -27,6 +27,7 @@ const initialState: BookDetailsState = {
   isLoading: "idle",
   error: null,
 };
+
 const bookDetailsSlice = createSlice({
   name: "detailsBook",
   initialState,

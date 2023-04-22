@@ -1,4 +1,5 @@
-import { AccountIcon, BurgerMenuIcon, CartIcon, FavoritesIcon, LogoIcon } from "assets";
+import { AccountIcon, BurgerMenuIcon, CartIcon, DotBadge, FavoritesIcon, LogoIcon } from "assets";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { COLOR, MEDIA } from "ui";
 
@@ -26,11 +27,20 @@ const LinkGroup = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  position: relative;
+  transition: 0.2s;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 const StyledLogoIcon = styled(LogoIcon)`
   path {
     fill: ${COLOR.DARK};
   }
 `;
+
 const StyledFavoritesIcon = styled(FavoritesIcon)`
   path {
     stroke: ${COLOR.DARK};
@@ -47,6 +57,16 @@ const StyledAccountIcon = styled(AccountIcon)`
   }
 `;
 
+const StyledDotBadge = styled(DotBadge)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  circle {
+    stroke: ${COLOR.WHITE};
+  }
+`;
+
 const StyledBurgerMenuIcon = styled(BurgerMenuIcon)`
   cursor: pointer;
   path {
@@ -57,9 +77,11 @@ const StyledBurgerMenuIcon = styled(BurgerMenuIcon)`
 export {
   StyledNav,
   LinkGroup,
+  StyledLink,
   StyledBurgerMenuIcon,
   StyledLogoIcon,
   StyledFavoritesIcon,
   StyledCartIcon,
   StyledAccountIcon,
+  StyledDotBadge,
 };
