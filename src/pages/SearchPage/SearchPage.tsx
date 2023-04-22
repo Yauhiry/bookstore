@@ -1,5 +1,5 @@
 import { BookList, PageTitle, Pagination } from "components";
-import { Content, StyledSearchPage } from "./styles";
+import { Content, FoundCounter, StyledSearchPage } from "./styles";
 import { fetchSearchBooks, selectSearchBooks, useAppDispatch, useAppSelector } from "store";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -18,6 +18,7 @@ export const SearchPage = () => {
       <PageTitle
         title={books.length > 0 ? `‘${searchValue}’ Search results` : "No Search results"}
       />
+      <FoundCounter>Found {total} books</FoundCounter>
       <Content>
         {books.length > 0 && <BookList books={books} />}
         {+total > 10 && <Pagination page={page} total={total} />}
