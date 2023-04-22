@@ -40,7 +40,7 @@ const S1 = css`
   font-style: normal;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 24px;
   color: ${COLOR.WHITE};
 `;
