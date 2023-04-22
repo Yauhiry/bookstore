@@ -15,6 +15,7 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 0 24px;
   ${MEDIA.MD} {
+    grid-gap: 72px;
     padding: 0 40px;
   }
 `;
