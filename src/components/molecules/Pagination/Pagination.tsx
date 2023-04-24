@@ -20,7 +20,7 @@ export const Pagination = ({ page, total }: PaginationProps) => {
   const mediaSize = width >= 481;
   const itemsPerPage = 10;
   const totalPages = Math.ceil(+total / itemsPerPage);
-  const actualTotalPages = totalPages <= 100 ? totalPages : 100;
+  const actualTotalPages = totalPages < 100 ? totalPages : 99;
 
   const navigate = useNavigate();
 
