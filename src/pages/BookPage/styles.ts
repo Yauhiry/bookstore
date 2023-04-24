@@ -1,9 +1,10 @@
-import { DropdownChevronIcon } from "assets";
+import { DropdownChevronIcon, FavoritesIcon } from "assets";
 import styled from "styled-components";
 import { COLOR, MEDIA, TYPOGRAPHY } from "ui";
 
 const StyledBookPage = styled.div`
   display: grid;
+  align-content: start;
   grid-gap: 48px;
 `;
 
@@ -20,12 +21,38 @@ const BookDetails = styled.div`
   }
 `;
 
+const ImageWrapper = styled.div`
+  position: relative;
+`;
+
 const Image = styled.img`
   width: 100%;
   max-height: 472px;
   aspect-ratio: 1/1;
   object-fit: contain;
   background: ${COLOR.ORANGE};
+`;
+
+const FavoriteButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  padding: 16px;
+  background: ${COLOR.DARK};
+`;
+
+const StyledFavoritesIcon = styled(FavoritesIcon)<{ $isActive: boolean }>`
+  fill: ${({ $isActive }) => $isActive && `${COLOR.RED}`};
+  path {
+    stroke: ${({ $isActive }) => ($isActive ? `${COLOR.RED}` : `${COLOR.WHITE}`)};
+  }
+  ${FavoriteButton}:hover & {
+    path {
+      stroke: ${COLOR.RED};
+    }
+  }
 `;
 
 const BookInfo = styled.div`
@@ -75,7 +102,10 @@ export {
   StyledBookPage,
   Container,
   BookDetails,
+  ImageWrapper,
   Image,
+  FavoriteButton,
+  StyledFavoritesIcon,
   PriceWrapper,
   Price,
   BookInfo,

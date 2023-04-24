@@ -14,7 +14,7 @@ import {
   StyledNav,
 } from "./styles";
 import { Theme } from "types";
-import { selectCart, useAppSelector } from "store";
+import { selectCart, selectFavorites, useAppSelector } from "store";
 
 interface NavProps {
   theme: Theme;
@@ -25,6 +25,7 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
   const { width = 0 } = useWindowSize();
   const mediaSize = width >= 992;
   const { cartItems } = useAppSelector(selectCart);
+  const { favorites } = useAppSelector(selectFavorites);
 
   return (
     <StyledNav>
@@ -37,6 +38,7 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
         {mediaSize && (
           <StyledLink to={ROUTE.FAVORITES}>
             <StyledFavoritesIcon />
+            {favorites.length > 0 && <StyledDotBadge />}
           </StyledLink>
         )}
         {mediaSize && (

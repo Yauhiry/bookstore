@@ -14,6 +14,8 @@ import { DetailItem } from "./atoms/DetailItem/DetailItem";
 import { Tabs } from "./molecules/Tabs/Tabs";
 import { TabSelector } from "./atoms/TabSelector/TabSelector";
 import { Pagination } from "./molecules/Pagination/Pagination";
+import { CartItem } from "./molecules/CartItem/CartItem";
+import { FavoritesItem } from "./molecules/FavoritesItem/FavoritesItem";
 
 export {
   PageTitle,
@@ -32,4 +34,6 @@ export {
   Tabs,
   TabSelector,
   Pagination,
+  CartItem,
+  FavoritesItem,
 };

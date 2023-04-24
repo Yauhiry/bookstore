@@ -7,6 +7,7 @@ import {
   selectBookDetails,
   useAppDispatch,
   useAppSelector,
+  selectFavorites,
 } from "store";
 import {
   BookDetails,
@@ -20,19 +21,27 @@ import {
   MoreWrapper,
   MoreButton,
   Container,
+  ImageWrapper,
+  FavoriteButton,
+  StyledFavoritesIcon,
 } from "./styles";
 import { useToggle } from "hooks";
+import { removeFavorite, setFavorite } from "store/features/favoritesSlice";
 
 export const BookPage = () => {
   const { book } = useAppSelector(selectBookDetails);
+  const { favorites } = useAppSelector(selectFavorites);
   const { isbn13 } = useParams();
   const dispatch = useAppDispatch();
   const [isMoreDetails, toggleMoreDetails] = useToggle();
-
   const { title, image, rating, price, authors, publisher, language, year, pages, desc } = book;
+  const isAddedFavotite = favorites.some((item) => item.isbn13 === book.isbn13);
 
-  const handleClick = () => {
+  const handleAddToCart = () => {
     dispatch(setCartItem(book));
+  };
+  const handleFavorite = () => {
+    isAddedFavotite ? dispatch(removeFavorite(book.isbn13)) : dispatch(setFavorite(book));
   };
 
   useEffect(() => {
@@ -44,7 +53,12 @@ export const BookPage = () => {
       <Header title={title} />
       <Container>
         <BookDetails>
-          <Image src={image} />
+          <ImageWrapper>
+            <Image src={image} />
+            <FavoriteButton onClick={handleFavorite}>
+              <StyledFavoritesIcon $isActive={isAddedFavotite} />
+            </FavoriteButton>
+          </ImageWrapper>
 
           <BookInfo>
             <DetailsList>
@@ -72,7 +86,7 @@ export const BookPage = () => {
                 )}
               </MoreWrapper>
             </DetailsList>
-            <Button type="button" text="Add to cart" onClick={handleClick} />
+            <Button type="button" text="Add to cart" onClick={handleAddToCart} />
           </BookInfo>
         </BookDetails>
         <Tabs description={desc} authors={authors} />
