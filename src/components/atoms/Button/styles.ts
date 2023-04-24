@@ -6,6 +6,10 @@ const StyledButton = styled.button`
   padding: 16px 0;
   ${TYPOGRAPHY.S1}
   background-color: ${COLOR.DARK};
+  transition: 0.2s;
+  &:hover {
+    background-color: ${COLOR.MEDIUM};
+  }
 `;
 
 export { StyledButton };

@@ -1,5 +1,4 @@
-import { Rating } from "react-simple-star-rating";
-import { StyledFillStarIcon, StyledEmptyStarIcon } from "./styles";
+import { StyledFillStarIcon, StyledEmptyStarIcon, StyledRating } from "./styles";
 
 interface StarsRatingProps {
   rating: string;
@@ -7,8 +6,7 @@ interface StarsRatingProps {
 
 export const StarsRating = ({ rating }: StarsRatingProps) => {
   return (
-    <Rating
-      style={{ display: "flex", gap: "8px" }}
+    <StyledRating
       fillIcon={<StyledFillStarIcon />}
       emptyIcon={<StyledEmptyStarIcon />}
       iconsCount={5}

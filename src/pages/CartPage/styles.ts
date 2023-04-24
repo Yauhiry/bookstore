@@ -4,6 +4,7 @@ import { MEDIA, TYPOGRAPHY } from "ui";
 const StyledCartPage = styled.div<{ $isFilled: boolean }>`
   display: ${({ $isFilled }) => ($isFilled ? "grid" : "block")};
   grid-gap: 36px;
+  align-content: start;
   ${MEDIA.MD} {
     grid-gap: 48px;
   }

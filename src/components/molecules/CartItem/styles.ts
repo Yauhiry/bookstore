@@ -152,6 +152,11 @@ const StyledCrossIcon = styled(CrossIcon)`
       fill: ${COLOR.DARK};
     }
   }
+  ${RemoveButton}:hover & {
+    path {
+      fill: ${COLOR.RED};
+    }
+  }
 `;
 
 export {

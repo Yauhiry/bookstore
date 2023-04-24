@@ -14,6 +14,9 @@ const StyledPagination = styled.div`
   ${MEDIA.SM} {
     grid-template-columns: 100px minmax(0, 450px) 100px;
   }
+  ${MEDIA.MD} {
+    padding-top: 48px;
+  }
 `;
 
 const ResponsivePaginationContainer = styled.div`
@@ -36,9 +39,13 @@ const StyledResponsivePagination = styled(ResponsivePagination)`
   }
 
   .page-item.disabled .page-link {
-    color: #6c757d;
+    ${TYPOGRAPHY.B2}
     pointer-events: none;
     cursor: auto;
+  }
+  .page-link:hover {
+    ${TYPOGRAPHY.B1}
+    font-weight: 600;
   }
 `;
 
