@@ -5,6 +5,7 @@ import {
   newBooksReducer,
   searchBooksReducer,
   cartReducer,
+  favoritesReducer,
 } from "store";
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
     bookDetails: bookDetailsReducer,
     searchBooks: searchBooksReducer,
     cart: cartReducer,
+    favorites: favoritesReducer,
   },
 });
 
