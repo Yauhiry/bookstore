@@ -1,4 +1,4 @@
-import { Button, Header } from "components";
+import { Button, CartItem, Header } from "components";
 import {
   StyledCartPage,
   CartEmpty,
@@ -14,7 +14,6 @@ import {
   TotalPrice,
 } from "./styles";
 import { calculateTotals, clearCart, selectCart, useAppSelector } from "store";
-import { CartItem } from "components/molecules/CartItem/CartItem";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
