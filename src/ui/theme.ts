@@ -5,6 +5,7 @@ export const themeColors = css`
     --dark: #313037;
     --primary: #f4eefd;
     --secondary: #a8a8a8;
+    --medium: #5b5a62;
     --white: #ffffff;
     --gray: #e7e7e7;
     --light: #e5e5e5;
@@ -19,6 +20,7 @@ export const themeColors = css`
     --dark: #ffffff;
     --primary: #5b5a62;
     --secondary: #a8a8a8;
+    --medium: #e7e7e7;
     --white: #313037;
     --gray: #e7e7e7;
     --light: #a8a8a8;
