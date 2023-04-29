@@ -20,9 +20,9 @@ export const themeColors = css`
     --dark: #ffffff;
     --primary: #5b5a62;
     --secondary: #a8a8a8;
-    --medium: #e7e7e7;
+    --medium: #d7e4fd;
     --white: #313037;
-    --gray: #e7e7e7;
+    --gray: #5b5a62;
     --light: #a8a8a8;
     --red: #fc857f;
     --blue: #d7e4fd;
