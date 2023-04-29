@@ -13,16 +13,25 @@ import {
   TotalTitle,
   TotalPrice,
 } from "./styles";
-import { calculateTotals, clearCart, selectCart, useAppSelector } from "store";
+import { calculateTotals, clearCart, selectCart, selectUser, useAppSelector } from "store";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ROUTE } from "router";
 
 export const CartPage = () => {
+  const { isAuth } = useAppSelector(selectUser);
   const { cartItems, sumTotal, vat, total } = useAppSelector(selectCart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleClear = () => {
-    dispatch(clearCart());
+  const handleClick = () => {
+    if (isAuth) {
+      dispatch(clearCart());
+      alert("OK");
+    } else {
+      navigate(ROUTE.SIGN_IN);
+    }
   };
 
   useEffect(() => {
@@ -56,7 +65,7 @@ export const CartPage = () => {
               <TotalTitle>Total</TotalTitle>
               <TotalPrice>$ {total.toFixed(2)}</TotalPrice>
             </Total>
-            <Button type="button" text="Check out" onClick={handleClear} />
+            <Button type="button" text="Check out" onClick={handleClick} />
           </TotalContainer>
         </CartContent>
       )}
