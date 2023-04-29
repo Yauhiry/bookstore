@@ -7,7 +7,6 @@ import {
   HomePage,
   SearchPage,
   SignInPage,
-  SignUpPage,
 } from "pages";
 import { MainTemplate } from "templates";
 import { ROUTE } from "router";
@@ -22,7 +21,6 @@ export const router = createBrowserRouter(
       <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
       <Route path={ROUTE.SEARCH} element={<SearchPage />} />
       <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
-      <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
     </Route>,
   ),
   { basename: "/bookstore" },

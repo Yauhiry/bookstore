@@ -5,6 +5,5 @@ export enum ROUTE {
   CART = "cart",
   FAVORITES = "favorites",
   SEARCH = "search/:searchValue/:currentPage",
-  SIGN_IN = "sigh-in",
-  SIGN_UP = "sigh-up",
+  SIGN_IN = "/sigh-in",
 }
