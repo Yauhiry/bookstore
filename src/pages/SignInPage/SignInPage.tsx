@@ -1,3 +1,10 @@
+import { SignInTabs } from "components";
+import { StyledSignInPage } from "./styles";
+
 export const SignInPage = () => {
-  return <div>SignInPage</div>;
+  return (
+    <StyledSignInPage>
+      <SignInTabs />
+    </StyledSignInPage>
+  );
 };

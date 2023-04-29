@@ -6,6 +6,7 @@ import {
   searchBooksReducer,
   cartReducer,
   favoritesReducer,
+  userReducer,
 } from "store";
 
 export const store = configureStore({
@@ -16,7 +17,12 @@ export const store = configureStore({
     searchBooks: searchBooksReducer,
     cart: cartReducer,
     favorites: favoritesReducer,
+    user: userReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

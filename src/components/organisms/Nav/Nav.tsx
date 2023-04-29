@@ -14,7 +14,7 @@ import {
   StyledNav,
 } from "./styles";
 import { Theme } from "types";
-import { selectCart, selectFavorites, useAppSelector } from "store";
+import { selectCart, selectFavorites, selectUser, useAppSelector } from "store";
 
 interface NavProps {
   theme: Theme;
@@ -26,6 +26,7 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
   const mediaSize = width >= 992;
   const { cartItems } = useAppSelector(selectCart);
   const { favorites } = useAppSelector(selectFavorites);
+  const { isAuth } = useAppSelector(selectUser);
 
   return (
     <StyledNav>
@@ -35,21 +36,21 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
       {mediaSize && <SearchForm />}
       <LinkGroup>
         {mediaSize && <ThemeButton theme={theme} toggleTheme={toggleTheme} />}
-        {mediaSize && (
+        {mediaSize && isAuth && (
           <StyledLink to={ROUTE.FAVORITES}>
             <StyledFavoritesIcon />
             {favorites.length > 0 && <StyledDotBadge />}
           </StyledLink>
         )}
+        <StyledLink to={ROUTE.CART}>
+          <StyledCartIcon />
+          {cartItems.length > 0 && <StyledDotBadge />}
+        </StyledLink>
         {mediaSize && (
-          <StyledLink to={ROUTE.CART}>
-            <StyledCartIcon />
-            {cartItems.length > 0 && <StyledDotBadge />}
+          <StyledLink to={ROUTE.ACCOUNT}>
+            <StyledAccountIcon />
           </StyledLink>
         )}
-        <StyledLink to={ROUTE.ACCOUNT}>
-          <StyledAccountIcon />
-        </StyledLink>
         {!mediaSize && <StyledBurgerMenuIcon />}
       </LinkGroup>
     </StyledNav>

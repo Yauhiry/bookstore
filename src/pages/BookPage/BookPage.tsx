@@ -1,6 +1,14 @@
-import { Button, DetailItem, Header, StarsRating, SubscribeForm, Tabs } from "components";
+import {
+  Button,
+  DetailItem,
+  Header,
+  PageLoader,
+  StarsRating,
+  SubscribeForm,
+  Tabs,
+} from "components";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   setCartItem,
   fetchBookDetails,
@@ -8,6 +16,7 @@ import {
   useAppDispatch,
   useAppSelector,
   selectFavorites,
+  selectUser,
 } from "store";
 import {
   BookDetails,
@@ -27,12 +36,15 @@ import {
 } from "./styles";
 import { useToggle } from "hooks";
 import { removeFavorite, setFavorite } from "store/features/favoritesSlice";
+import { ROUTE } from "router";
 
 export const BookPage = () => {
-  const { book } = useAppSelector(selectBookDetails);
+  const { isAuth } = useAppSelector(selectUser);
+  const { book, isLoading } = useAppSelector(selectBookDetails);
   const { favorites } = useAppSelector(selectFavorites);
   const { isbn13 } = useParams();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const [isMoreDetails, toggleMoreDetails] = useToggle();
   const { title, image, rating, price, authors, publisher, language, year, pages, desc } = book;
   const isAddedFavotite = favorites.some((item) => item.isbn13 === book.isbn13);
@@ -41,13 +53,20 @@ export const BookPage = () => {
     dispatch(setCartItem(book));
   };
   const handleFavorite = () => {
-    isAddedFavotite ? dispatch(removeFavorite(book.isbn13)) : dispatch(setFavorite(book));
+    isAuth
+      ? isAddedFavotite
+        ? dispatch(removeFavorite(book.isbn13))
+        : dispatch(setFavorite(book))
+      : navigate(ROUTE.SIGN_IN);
   };
 
   useEffect(() => {
     isbn13 && dispatch(fetchBookDetails({ isbn13 }));
   }, [dispatch, isbn13]);
 
+  if (isLoading === "idle" || isLoading === "pending") {
+    return <PageLoader />;
+  }
   return (
     <StyledBookPage>
       <Header title={title} />
@@ -56,7 +75,7 @@ export const BookPage = () => {
           <ImageWrapper>
             <Image src={image} />
             <FavoriteButton onClick={handleFavorite}>
-              <StyledFavoritesIcon $isActive={isAddedFavotite} />
+              <StyledFavoritesIcon $isActive={isAuth && isAddedFavotite} />
             </FavoriteButton>
           </ImageWrapper>
 

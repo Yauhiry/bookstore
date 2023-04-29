@@ -5,9 +5,9 @@ import { StyledInput } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegister<FormValue>;
-  name: "searchValue" | "subscribeEmail";
+  name: "name" | "email" | "password" | "searchValue" | "confirmPassword";
 }
 
-export const Input = ({ name, placeholder, type, register }: InputProps) => {
-  return <StyledInput type={type} placeholder={placeholder} {...register(name)} />;
+export const Input = ({ id, name, placeholder, type, register }: InputProps) => {
+  return <StyledInput id={id} type={type} placeholder={placeholder} {...register(name)} />;
 };
