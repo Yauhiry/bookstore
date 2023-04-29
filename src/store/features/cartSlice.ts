@@ -27,7 +27,6 @@ const cartSlice = createSlice({
       isAdded
         ? (isAdded.amount = isAdded.amount + 1)
         : state.cartItems.push({ ...payload, amount: 1 });
-
       setLocalStorage("cartItems", state.cartItems);
     },
     clearCart: (state) => {
