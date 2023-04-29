@@ -1,11 +1,11 @@
-import { BookList, PageTitle, Pagination } from "components";
+import { BookList, PageLoader, PageTitle, Pagination } from "components";
 import { Content, FoundCounter, StyledSearchPage } from "./styles";
 import { fetchSearchBooks, selectSearchBooks, useAppDispatch, useAppSelector } from "store";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export const SearchPage = () => {
-  const { searchValue, books, total, page } = useAppSelector(selectSearchBooks);
+  const { searchValue, books, total, page, isLoading } = useAppSelector(selectSearchBooks);
   const { currentPage } = useParams();
   const dispatch = useAppDispatch();
 
@@ -13,6 +13,9 @@ export const SearchPage = () => {
     currentPage && dispatch(fetchSearchBooks({ searchValue, currentPage }));
   }, [dispatch, searchValue, currentPage]);
 
+  if (isLoading === "idle" || isLoading === "pending") {
+    return <PageLoader />;
+  }
   return (
     <StyledSearchPage>
       <PageTitle
