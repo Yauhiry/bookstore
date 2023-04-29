@@ -8,6 +8,7 @@ const StyledHeader = styled.div`
 `;
 
 const StyledArrowLeftIcon = styled(ArrowLeftIcon)`
+  padding: 5px 5px 5px 0;
   cursor: pointer;
   path {
     fill: ${COLOR.DARK};
