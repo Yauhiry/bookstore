@@ -1,4 +1,4 @@
-import { Button, Input, Label } from "components";
+import { Button, Input } from "components";
 import { Message, SignInFormContainer, StyledLink, StyledSignInForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormValue, SignInFormValues } from "types";
@@ -22,16 +22,16 @@ export const SignInForm = () => {
     <StyledSignInForm onSubmit={handleSubmit(onSubmit)}>
       {passwordChanged && <Message>Your password has been changed !</Message>}
       <SignInFormContainer>
-        <Label id="signInEmail" label="Email" />
         <Input
+          label="Email"
           id="signInEmail"
           name="email"
           type="email"
           placeholder="Your email"
           register={register}
         />
-        <Label id="signInPassword" label="Password" />
         <Input
+          label="Password"
           id="signInPassword"
           name="password"
           type="password"

@@ -22,8 +22,4 @@ const Email = styled.span`
   font-weight: 700;
 `;
 
-const PasswordResetFormContainer = styled.div`
-  display: grid;
-`;
-
-export { StyledPasswordResetForm, Message, Email, PasswordResetFormContainer };
+export { StyledPasswordResetForm, Message, Email };

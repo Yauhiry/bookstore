@@ -5,7 +5,6 @@ import { Footer } from "./organisms/Footer/Footer";
 import { Nav } from "./organisms/Nav/Nav";
 import { BookList } from "./molecules/BookList/BookList";
 import { BookItem } from "./molecules/BookItem/BookItem";
-import { Label } from "./atoms/Label/Label";
 import { Input } from "./atoms/Input/Input";
 import { SearchForm } from "./molecules/SearchForm/SearchForm";
 import { SubscribeForm } from "./molecules/SubscribeForm/SubscribeForm";
@@ -34,7 +33,6 @@ export {
   Nav,
   BookList,
   BookItem,
-  Label,
   Input,
   SearchForm,
   SubscribeForm,

@@ -1,5 +1,5 @@
-import { Email, Message, PasswordResetFormContainer, StyledPasswordResetForm } from "./styles";
-import { Button, FormTitle, Input, Label } from "components";
+import { Email, Message, StyledPasswordResetForm } from "./styles";
+import { Button, FormTitle, Input } from "components";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormValue, PasswordResetFormValue } from "types";
 import { useState } from "react";
@@ -32,10 +32,14 @@ export const PasswordResetForm = () => {
           You will receive an email <Email>{sentEmail}</Email> with a link to reset your password!
         </Message>
       )}
-      <PasswordResetFormContainer>
-        <Label id="email" label="Email" />
-        <Input id="email" name="email" type="text" placeholder="Your email" register={register} />
-      </PasswordResetFormContainer>
+      <Input
+        label="Email"
+        id="email"
+        name="email"
+        type="text"
+        placeholder="Your email"
+        register={register}
+      />
       {sentEmail ? (
         <Button type="button" text="go to home" onClick={handleClick} />
       ) : (

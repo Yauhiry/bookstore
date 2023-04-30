@@ -7,6 +7,7 @@ const StyledSignUpForm = styled.form`
 
 const SignUpFormContainer = styled.div`
   display: grid;
+  grid-gap: 16px;
 `;
 
 export { StyledSignUpForm, SignUpFormContainer };

@@ -1,4 +1,4 @@
-import { Button, Input, Label } from "components";
+import { Button, Input } from "components";
 import { SignUpFormContainer, StyledSignUpForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormValue, SignUpFormValues } from "types";
@@ -20,32 +20,32 @@ export const SignUpForm = () => {
   return (
     <StyledSignUpForm onSubmit={handleSubmit(onSubmit)}>
       <SignUpFormContainer>
-        <Label id="signUpName" label="Name" />
         <Input
+          label="Name"
           id="signUpName"
           name="name"
           type="text"
           placeholder="Your name"
           register={register}
         />
-        <Label id="signUpEmail" label="Email" />
         <Input
+          label="Email"
           id="signUpEmail"
           name="email"
           type="text"
           placeholder="Your email"
           register={register}
         />
-        <Label id="signUpPassword" label="Password" />
         <Input
+          label="Password"
           id="signUpPassword"
           name="password"
           type="password"
           placeholder="Your password"
           register={register}
         />
-        <Label id="signUpConfirmPassword" label="Confirm password" />
         <Input
+          label="Confirm password"
           id="signUpConfirmPassword"
           name="confirmPassword"
           type="password"

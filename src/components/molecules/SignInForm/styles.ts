@@ -15,10 +15,10 @@ const Message = styled.p`
 
 const SignInFormContainer = styled.div`
   display: grid;
+  grid-gap: 16px;
 `;
 
 const StyledLink = styled(Link)`
-  padding-top: 16px;
   ${TYPOGRAPHY.B1}
 `;
 

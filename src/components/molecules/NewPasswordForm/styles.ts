@@ -19,6 +19,7 @@ const Message = styled.p`
 
 const NewPasswordFormContainer = styled.div`
   display: grid;
+  grid-gap: 16px;
 `;
 
 export { StyledNewPasswordForm, Message, NewPasswordFormContainer };

@@ -1,5 +1,5 @@
 import { NewPasswordFormContainer, StyledNewPasswordForm } from "./styles";
-import { Button, FormTitle, Input, Label } from "components";
+import { Button, FormTitle, Input } from "components";
 import { fetchNewPassword, selectUser, useAppDispatch, useAppSelector } from "store";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -22,16 +22,16 @@ export const NewPasswordForm = () => {
     <StyledNewPasswordForm onSubmit={handleSubmit(onSubmit)}>
       <FormTitle text="reset password" />
       <NewPasswordFormContainer>
-        <Label id="password" label="Password" />
         <Input
+          label="Password"
           id="password"
           name="password"
           type="password"
           placeholder="Your password"
           register={register}
         />
-        <Label id="confirmPassword" label="Confirm password" />
         <Input
+          label="Confirm password"
           id="confirmPassword"
           name="confirmPassword"
           type="password"
