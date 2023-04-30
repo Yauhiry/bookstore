@@ -3,15 +3,16 @@ import { StyledButton } from "./styles";
 import { COLOR } from "ui";
 
 interface ButtonProps {
+  className?: string;
   type: "button" | "submit";
   text: string;
   loading?: boolean;
   onClick?: () => void;
 }
 
-export const Button = ({ type, text, loading, onClick }: ButtonProps) => {
+export const Button = ({ className, type, text, loading, onClick }: ButtonProps) => {
   return (
-    <StyledButton onClick={onClick} type={type}>
+    <StyledButton className={className} onClick={onClick} type={type}>
       {text}{" "}
       <ScaleLoader color={`${COLOR.WHITE}`} loading={loading ?? false} height={18} width={2} />
     </StyledButton>

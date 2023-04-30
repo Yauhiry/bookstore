@@ -1,15 +1,20 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
+  EmailAuthProvider,
   User,
   confirmPasswordReset,
   createUserWithEmailAndPassword,
+  reauthenticateWithCredential,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
+  updateEmail,
+  updatePassword,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import {
+  AccountFormValue,
   NewPasswordFormValue,
   PasswordResetFormValue,
   SignInFormValues,
@@ -19,7 +24,7 @@ import { FirebaseError } from "firebase/app";
 
 interface UserState {
   userName: string | null;
-  email: string | null;
+  userEmail: string | null;
   isLoading: "idle" | "pending" | "succeeded" | "failed";
   errorMessage: string | null;
   isAuth: boolean;
@@ -27,7 +32,7 @@ interface UserState {
 }
 
 export const fetchSignUpUser = createAsyncThunk<
-  Pick<UserState, "userName" | "email">,
+  Pick<UserState, "userName" | "userEmail">,
   SignUpFormValues,
   { rejectValue: string }
 >("user/fetchSignUpUser", async ({ email, password, name }, { rejectWithValue }) => {
@@ -36,7 +41,7 @@ export const fetchSignUpUser = createAsyncThunk<
     await updateProfile(auth.currentUser as User, { displayName: name });
     return {
       userName: user.displayName,
-      email: user.email,
+      userEmail: user.email,
     };
   } catch (error) {
     const firebaseError = error as FirebaseError;
@@ -45,7 +50,7 @@ export const fetchSignUpUser = createAsyncThunk<
 });
 
 export const fetchSignInUser = createAsyncThunk<
-  Pick<UserState, "userName" | "email">,
+  Pick<UserState, "userName" | "userEmail">,
   SignInFormValues,
   { rejectValue: string }
 >("user/fetchSignInUser", async ({ email, password }, { rejectWithValue }) => {
@@ -53,7 +58,7 @@ export const fetchSignInUser = createAsyncThunk<
     const { user } = await signInWithEmailAndPassword(auth, email, password);
     return {
       userName: user.displayName,
-      email: user.email,
+      userEmail: user.email,
     };
   } catch (error) {
     const firebaseError = error as FirebaseError;
@@ -100,9 +105,43 @@ export const fetchNewPassword = createAsyncThunk<
   }
 });
 
+export const fetchAccountUpdate = createAsyncThunk<
+  Pick<UserState, "userName" | "userEmail">,
+  AccountFormValue,
+  { rejectValue: string }
+>(
+  "user/fetchAccountUpdate",
+  async ({ name, email, password, newPassword }, { rejectWithValue }) => {
+    try {
+      const credential = await EmailAuthProvider.credential(
+        auth.currentUser?.email as string,
+        password,
+      );
+      await reauthenticateWithCredential(auth.currentUser as User, credential);
+      if (name && name !== auth.currentUser?.displayName) {
+        await updateProfile(auth.currentUser as User, { displayName: name });
+      }
+      if (email && email !== auth.currentUser?.email) {
+        await updateEmail(auth.currentUser as User, email);
+      }
+      if (newPassword) {
+        await updatePassword(auth.currentUser as User, newPassword);
+      }
+      const user = auth.currentUser as User;
+      return {
+        userEmail: user.email,
+        userName: user.displayName,
+      };
+    } catch (error) {
+      const firebaseError = error as FirebaseError;
+      return rejectWithValue(firebaseError.code);
+    }
+  },
+);
+
 const initialState: UserState = {
   userName: null,
-  email: null,
+  userEmail: null,
   isLoading: "idle",
   errorMessage: null,
   isAuth: false,
@@ -115,7 +154,7 @@ const userSlice = createSlice({
   reducers: {
     setUserAuth(state, { payload }: PayloadAction<User>) {
       state.userName = payload.displayName;
-      state.email = payload.email;
+      state.userEmail = payload.email;
       state.isAuth = true;
     },
   },
@@ -126,34 +165,33 @@ const userSlice = createSlice({
       state.passwordChanged = false;
     });
     builder.addCase(fetchSignUpUser.fulfilled, (state, { payload }) => {
-      state.email = payload.email;
+      state.userEmail = payload.userEmail;
       state.userName = payload.userName;
       state.isLoading = "succeeded";
       state.isAuth = true;
-      state.passwordChanged = false;
     });
     builder.addCase(fetchSignUpUser.rejected, (state, { payload }) => {
       if (payload) {
         state.isLoading = "failed";
         state.errorMessage = payload;
-        state.passwordChanged = false;
       }
     });
     builder.addCase(fetchSignInUser.pending, (state) => {
       state.isLoading = "pending";
       state.errorMessage = null;
-      state.passwordChanged = false;
     });
     builder.addCase(fetchSignInUser.fulfilled, (state, { payload }) => {
-      state.email = payload.email;
+      state.userEmail = payload.userEmail;
       state.userName = payload.userName;
       state.isLoading = "succeeded";
       state.isAuth = true;
+      state.passwordChanged = false;
     });
     builder.addCase(fetchSignInUser.rejected, (state, { payload }) => {
       if (payload) {
         state.isLoading = "failed";
         state.errorMessage = payload;
+        state.passwordChanged = false;
       }
     });
     builder.addCase(fetchSignOutUser.pending, (state) => {
@@ -161,7 +199,7 @@ const userSlice = createSlice({
       state.errorMessage = null;
     });
     builder.addCase(fetchSignOutUser.fulfilled, (state) => {
-      state.email = null;
+      state.userEmail = null;
       state.userName = null;
       state.isLoading = "succeeded";
       state.isAuth = false;
@@ -195,6 +233,22 @@ const userSlice = createSlice({
       state.passwordChanged = true;
     });
     builder.addCase(fetchNewPassword.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = "failed";
+        state.errorMessage = payload;
+      }
+    });
+    builder.addCase(fetchAccountUpdate.pending, (state) => {
+      state.isLoading = "pending";
+      state.errorMessage = null;
+    });
+    builder.addCase(fetchAccountUpdate.fulfilled, (state, { payload }) => {
+      state.userEmail = payload.userEmail;
+      state.userName = payload.userName;
+      state.isLoading = "succeeded";
+      state.passwordChanged = true;
+    });
+    builder.addCase(fetchAccountUpdate.rejected, (state, { payload }) => {
       if (payload) {
         state.isLoading = "failed";
         state.errorMessage = payload;

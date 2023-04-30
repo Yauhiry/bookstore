@@ -1,14 +1,15 @@
-import { Button } from "components";
+import { AccountForm, Button, Header } from "components";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 import { fetchSignOutUser, useAppDispatch } from "store";
+import { StyledAccountPage } from "./styles";
 
 export const AccountPage = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const handleNavigate = () => {
-    return navigate(ROUTE.SIGN_IN);
+    navigate(ROUTE.SIGN_IN);
   };
 
   const handleClick = () => {
@@ -16,9 +17,11 @@ export const AccountPage = () => {
   };
 
   return (
-    <div>
-      <Button onClick={handleNavigate} text={"sign in"} type="button" />
+    <StyledAccountPage>
+      <Header title="Account" />
+      <AccountForm />
+      <Button onClick={handleNavigate} text="sign in" type="button" />
       <Button onClick={handleClick} text="exit" type="button" />
-    </div>
+    </StyledAccountPage>
   );
 };

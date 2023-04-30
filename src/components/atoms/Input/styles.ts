@@ -1,6 +1,16 @@
 import styled from "styled-components";
 import { COLOR, TYPOGRAPHY } from "ui";
 
+const InputContainer = styled.div`
+  display: grid;
+  grid-gap: 8px;
+`;
+
+const Label = styled.label`
+  ${TYPOGRAPHY.B1}
+  font-weight: 600;
+`;
+
 const StyledInput = styled.input`
   width: 100%;
   padding: 16px 60px 14px 20px;
@@ -20,4 +30,4 @@ const StyledInput = styled.input`
   }
 `;
 
-export { StyledInput };
+export { InputContainer, Label, StyledInput };

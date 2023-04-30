@@ -47,6 +47,7 @@ export interface FormValue {
   email: string;
   password: string;
   confirmPassword: string;
+  newPassword: string;
 }
 
 export interface SignUpFormValues {
@@ -67,6 +68,14 @@ export interface PasswordResetFormValue {
 
 export interface NewPasswordFormValue {
   password: string;
+  confirmPassword: string;
+}
+
+export interface AccountFormValue {
+  name: string;
+  email: string;
+  password: string;
+  newPassword: string;
   confirmPassword: string;
 }
 

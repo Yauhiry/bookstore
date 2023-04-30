@@ -14,6 +14,7 @@ import { fetchSignInUser } from "./features/userSlice";
 import { fetchSignOutUser } from "./features/userSlice";
 import { fetchResetUserPassword } from "./features/userSlice";
 import { fetchNewPassword } from "./features/userSlice";
+import { fetchAccountUpdate } from "./features/userSlice";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import { selectTheme } from "./selectors/themeSelector";
 import { selectNewBooks } from "./selectors/newBooksSelector";
@@ -53,6 +54,7 @@ export {
   fetchSignOutUser,
   fetchResetUserPassword,
   fetchNewPassword,
+  fetchAccountUpdate,
   useAppDispatch,
   useAppSelector,
   selectTheme,

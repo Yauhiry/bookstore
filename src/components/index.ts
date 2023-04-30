@@ -24,6 +24,7 @@ import { SignInForm } from "./molecules/SignInForm/SignInForm";
 import { SignUpForm } from "./molecules/SignUpForm/SignUpForm";
 import { PasswordResetForm } from "./molecules/PasswordResetForm/PasswordResetForm";
 import { NewPasswordForm } from "./molecules/NewPasswordForm/NewPasswordForm";
+import { AccountForm } from "./molecules/AccountForm/AccountForm";
 
 export {
   PageTitle,
@@ -52,4 +53,5 @@ export {
   SignUpForm,
   PasswordResetForm,
   NewPasswordForm,
+  AccountForm,
 };

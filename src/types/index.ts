@@ -8,6 +8,7 @@ import {
   SignInFormValues,
   PasswordResetFormValue,
   NewPasswordFormValue,
+  AccountFormValue,
 } from "./types";
 
 export type {
@@ -20,4 +21,5 @@ export type {
   SignInFormValues,
   PasswordResetFormValue,
   NewPasswordFormValue,
+  AccountFormValue,
 };
