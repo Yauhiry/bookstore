@@ -3,6 +3,7 @@ import { PageLoader } from "./atoms/PageLoader/PageLoader";
 import { Button } from "./atoms/Button/Button";
 import { Footer } from "./organisms/Footer/Footer";
 import { Nav } from "./organisms/Nav/Nav";
+import { AccountMenu } from "./molecules/AccountMenu/AccountMenu";
 import { BookList } from "./molecules/BookList/BookList";
 import { BookItem } from "./molecules/BookItem/BookItem";
 import { Input } from "./atoms/Input/Input";
@@ -31,6 +32,7 @@ export {
   Button,
   Footer,
   Nav,
+  AccountMenu,
   BookList,
   BookItem,
   Input,

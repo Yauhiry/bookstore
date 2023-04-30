@@ -1,8 +1,9 @@
-import { SearchForm, ThemeButton } from "components";
-import { useWindowSize } from "hooks";
-import { Link } from "react-router-dom";
+import { AccountMenu, SearchForm, ThemeButton } from "components";
+import { useToggle, useWindowSize } from "hooks";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 import {
+  AccountButton,
   LinkGroup,
   StyledAccountIcon,
   StyledBurgerMenuIcon,
@@ -27,6 +28,12 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
   const { cartItems } = useAppSelector(selectCart);
   const { favorites } = useAppSelector(selectFavorites);
   const { isAuth } = useAppSelector(selectUser);
+  const [isAccountMenuOpen, toggleAccountMenu] = useToggle();
+  const navigate = useNavigate();
+
+  const handleAccountMenu = () => {
+    isAuth ? toggleAccountMenu() : navigate(ROUTE.SIGN_IN);
+  };
 
   return (
     <StyledNav>
@@ -47,12 +54,15 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
           {cartItems.length > 0 && <StyledDotBadge />}
         </StyledLink>
         {mediaSize && (
-          <StyledLink to={ROUTE.ACCOUNT}>
+          <AccountButton onClick={handleAccountMenu}>
             <StyledAccountIcon />
-          </StyledLink>
+          </AccountButton>
         )}
         {!mediaSize && <StyledBurgerMenuIcon />}
       </LinkGroup>
+      {isAccountMenuOpen && (
+        <AccountMenu isAccountMenuOpen={isAccountMenuOpen} toggleAccountMenu={toggleAccountMenu} />
+      )}
     </StyledNav>
   );
 };

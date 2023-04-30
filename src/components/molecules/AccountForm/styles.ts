@@ -5,10 +5,8 @@ import { COLOR, MEDIA } from "ui";
 const StyledAccountForm = styled.form`
   display: grid;
   grid-gap: 36px;
-  padding-bottom: 56px;
   ${MEDIA.MD} {
     grid-gap: 48px;
-    padding-bottom: 72px;
   }
   ${MEDIA.XL} {
     grid-template-columns: 1fr 1fr;

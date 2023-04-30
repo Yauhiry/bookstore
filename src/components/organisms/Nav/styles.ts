@@ -4,11 +4,13 @@ import styled from "styled-components";
 import { COLOR, MEDIA } from "ui";
 
 const StyledNav = styled.nav`
+  position: relative;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
+  background: ${COLOR.WHITE};
   border-bottom: 1px solid ${COLOR.GRAY};
   ${MEDIA.XL} {
     grid-template-columns: 248px 1fr 248px;
@@ -46,11 +48,22 @@ const StyledFavoritesIcon = styled(FavoritesIcon)`
     stroke: ${COLOR.DARK};
   }
 `;
+
 const StyledCartIcon = styled(CartIcon)`
   path {
     stroke: ${COLOR.DARK};
   }
 `;
+
+const AccountButton = styled.button`
+  display: flex;
+  transition: 0.2s;
+  background: none;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 const StyledAccountIcon = styled(AccountIcon)`
   path {
     stroke: ${COLOR.DARK};
@@ -78,6 +91,7 @@ export {
   StyledNav,
   LinkGroup,
   StyledLink,
+  AccountButton,
   StyledBurgerMenuIcon,
   StyledLogoIcon,
   StyledFavoritesIcon,
