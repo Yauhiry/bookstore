@@ -5,5 +5,16 @@ import { FavoritesPage } from "./FavoritesPage/FavoritesPage";
 import { HomePage } from "./HomePage/HomePage";
 import { SearchPage } from "./SearchPage/SearchPage";
 import { SignInPage } from "./SignInPage/SignInPage";
-
-export { AccountPage, BookPage, CartPage, FavoritesPage, HomePage, SearchPage, SignInPage };
+import { PasswordResetPage } from "./SignInPage/PasswordResetPage/PasswordResetPage";
+import { NewPassword } from "./NewPasswordPage/NewPassword";
+export {
+  AccountPage,
+  BookPage,
+  CartPage,
+  FavoritesPage,
+  HomePage,
+  SearchPage,
+  SignInPage,
+  PasswordResetPage,
+  NewPassword,
+};

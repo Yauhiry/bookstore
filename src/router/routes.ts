@@ -6,4 +6,6 @@ export enum ROUTE {
   FAVORITES = "favorites",
   SEARCH = "search/:searchValue/:currentPage",
   SIGN_IN = "/sigh-in",
+  PASSWORD_RESET = "/password-reset",
+  NEW_PASSWORD = "/new-password",
 }

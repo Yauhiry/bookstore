@@ -5,6 +5,8 @@ import {
   CartPage,
   FavoritesPage,
   HomePage,
+  NewPassword,
+  PasswordResetPage,
   SearchPage,
   SignInPage,
 } from "pages";
@@ -21,6 +23,8 @@ export const router = createBrowserRouter(
       <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
       <Route path={ROUTE.SEARCH} element={<SearchPage />} />
       <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
+      <Route path={ROUTE.PASSWORD_RESET} element={<PasswordResetPage />} />
+      <Route path={ROUTE.NEW_PASSWORD} element={<NewPassword />} />
     </Route>,
   ),
   { basename: "/bookstore" },

@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { TYPOGRAPHY } from "ui";
+import { COLOR, TYPOGRAPHY } from "ui";
 
 const StyledSignInForm = styled.form`
   display: grid;
   grid-gap: 40px;
+`;
+
+const Message = styled.p`
+  padding: 20px;
+  ${TYPOGRAPHY.B1}
+  background: ${COLOR.PRIMARY};
 `;
 
 const SignInFormContainer = styled.div`
@@ -16,4 +22,4 @@ const StyledLink = styled(Link)`
   ${TYPOGRAPHY.B1}
 `;
 
-export { StyledSignInForm, SignInFormContainer, StyledLink };
+export { StyledSignInForm, Message, SignInFormContainer, StyledLink };

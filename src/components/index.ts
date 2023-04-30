@@ -18,9 +18,12 @@ import { TabSelector } from "./atoms/TabSelector/TabSelector";
 import { Pagination } from "./molecules/Pagination/Pagination";
 import { CartItem } from "./molecules/CartItem/CartItem";
 import { FavoritesItem } from "./molecules/FavoritesItem/FavoritesItem";
+import { FormTitle } from "./atoms/FormTitle/FormTitle";
 import { SignInTabs } from "./organisms/SignInTabs/SignInTabs";
 import { SignInForm } from "./molecules/SignInForm/SignInForm";
 import { SignUpForm } from "./molecules/SignUpForm/SignUpForm";
+import { PasswordResetForm } from "./molecules/PasswordResetForm/PasswordResetForm";
+import { NewPasswordForm } from "./molecules/NewPasswordForm/NewPasswordForm";
 
 export {
   PageTitle,
@@ -43,7 +46,10 @@ export {
   Pagination,
   CartItem,
   FavoritesItem,
+  FormTitle,
   SignInTabs,
   SignInForm,
   SignUpForm,
+  PasswordResetForm,
+  NewPasswordForm,
 };

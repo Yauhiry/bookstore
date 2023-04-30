@@ -61,4 +61,13 @@ export interface SignInFormValues {
   password: string;
 }
 
+export interface PasswordResetFormValue {
+  email: string;
+}
+
+export interface NewPasswordFormValue {
+  password: string;
+  confirmPassword: string;
+}
+
 export type Theme = "light" | "dark";

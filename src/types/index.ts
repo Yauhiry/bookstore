@@ -6,6 +6,8 @@ import {
   Theme,
   SignUpFormValues,
   SignInFormValues,
+  PasswordResetFormValue,
+  NewPasswordFormValue,
 } from "./types";
 
 export type {
@@ -16,4 +18,6 @@ export type {
   Theme,
   SignUpFormValues,
   SignInFormValues,
+  PasswordResetFormValue,
+  NewPasswordFormValue,
 };

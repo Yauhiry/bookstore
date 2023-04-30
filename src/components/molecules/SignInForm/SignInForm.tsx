@@ -1,5 +1,5 @@
 import { Button, Input, Label } from "components";
-import { SignInFormContainer, StyledLink, StyledSignInForm } from "./styles";
+import { Message, SignInFormContainer, StyledLink, StyledSignInForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormValue, SignInFormValues } from "types";
 import { ROUTE } from "router";
@@ -9,17 +9,18 @@ import { useNavigate } from "react-router-dom";
 export const SignInForm = () => {
   const { register, handleSubmit, reset } = useForm<FormValue>();
   const dispatch = useAppDispatch();
-  const { isLoading, errorMessage } = useAppSelector(selectUser);
+  const { isLoading, errorMessage, passwordChanged } = useAppSelector(selectUser);
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<SignInFormValues> = async (SignInFormValues) => {
     await dispatch(fetchSignInUser(SignInFormValues)).unwrap();
     await reset();
-    await navigate(-1);
+    await navigate(ROUTE.HOME);
   };
 
   return (
     <StyledSignInForm onSubmit={handleSubmit(onSubmit)}>
+      {passwordChanged && <Message>Your password has been changed !</Message>}
       <SignInFormContainer>
         <Label id="signInEmail" label="Email" />
         <Input
@@ -37,7 +38,7 @@ export const SignInForm = () => {
           placeholder="Your password"
           register={register}
         />
-        <StyledLink to={ROUTE.HOME}>Forgot password ?</StyledLink>
+        <StyledLink to={ROUTE.PASSWORD_RESET}>Forgot password ?</StyledLink>
       </SignInFormContainer>
       <Button type="submit" text="sign in" loading={isLoading === "pending"} />
     </StyledSignInForm>
