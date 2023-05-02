@@ -12,7 +12,7 @@ interface ButtonProps {
 
 export const Button = ({ className, type, text, loading, onClick }: ButtonProps) => {
   return (
-    <StyledButton whileTap={{ scale: 0.96 }} className={className} onClick={onClick} type={type}>
+    <StyledButton whileTap={{ scale: 0.97 }} className={className} onClick={onClick} type={type}>
       {text}{" "}
       <ScaleLoader color={`${COLOR.WHITE}`} loading={loading ?? false} height={18} width={2} />
     </StyledButton>

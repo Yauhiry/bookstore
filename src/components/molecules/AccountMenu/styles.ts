@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const StyledAccountMenu = styled(motion.div)`
   position: absolute;
+  z-index: 10;
   display: grid;
   place-items: center;
   grid-gap: 8px;

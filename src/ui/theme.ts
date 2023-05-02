@@ -14,6 +14,7 @@ export const themeColors = css`
     --green: #caeff0;
     --orange: #fee9e2;
     --purple: #f4eefd;
+    --opacity: #31303780;
   }
 
   html[theme="dark"] {
@@ -29,5 +30,6 @@ export const themeColors = css`
     --green: #caeff0;
     --orange: #fee9e2;
     --purple: #f4eefd;
+    --opacity: #ffffff60;
   }
 `;

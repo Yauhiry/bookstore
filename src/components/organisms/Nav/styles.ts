@@ -2,6 +2,8 @@ import { AccountIcon, BurgerMenuIcon, CartIcon, DotBadge, FavoritesIcon, LogoIco
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { COLOR, MEDIA } from "ui";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { motion } from "framer-motion";
 
 const StyledNav = styled.nav`
   position: relative;
@@ -87,6 +89,8 @@ const StyledBurgerMenuIcon = styled(BurgerMenuIcon)`
   }
 `;
 
+const AnimationBurgerMenu = styled(motion(BurgerMenu))``;
+
 export {
   StyledNav,
   LinkGroup,
@@ -98,4 +102,5 @@ export {
   StyledCartIcon,
   StyledAccountIcon,
   StyledDotBadge,
+  AnimationBurgerMenu,
 };

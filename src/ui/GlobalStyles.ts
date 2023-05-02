@@ -8,10 +8,10 @@ body, div, h1, h2, h3, ul, li, input, form, button, span, p, a, label {
     box-sizing: border-box;
   }
   html {
-    width:100vw;
-    overflow-x:hidden;
   }
   body {
+    width:100vw;
+    overflow-x:hidden;
     font-family: 'Roboto', sans-serif;
   }
   ul {

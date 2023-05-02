@@ -8,34 +8,34 @@ interface AccountMenuProps {
   isAccountMenuOpen: boolean;
 }
 
+const container = {
+  hidden: { opacity: 0, transition: { staggerChildren: 0.05, staggerDirection: -1 } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.2,
+    },
+  },
+  exit: { opacity: 0, transition: { staggerChildren: 0.05, staggerDirection: 1 } },
+};
+
+const item = {
+  hidden: { y: "100%", opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+  exit: { y: "-100%", opacity: 0 },
+};
+
 export const AccountMenu = ({ isAccountMenuOpen, toggleAccountMenu }: AccountMenuProps) => {
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
     dispatch(fetchSignOutUser());
     toggleAccountMenu();
-  };
-
-  const container = {
-    hidden: { opacity: 0, transition: { staggerChildren: 0.05, staggerDirection: -1 } },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.2,
-      },
-    },
-    exit: { opacity: 0, transition: { staggerChildren: 0.05, staggerDirection: 1 } },
-  };
-
-  const item = {
-    hidden: { y: "100%", opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-    exit: { y: "-100%", opacity: 0 },
   };
 
   return (

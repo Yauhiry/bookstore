@@ -6,7 +6,12 @@ import { generatePath, useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 import { setSearchValue, useAppDispatch } from "store";
 
-export const SearchForm = () => {
+interface SearchFormProps {
+  isBurgerOpen?: boolean;
+  toggleBurger: () => void;
+}
+
+export const SearchForm = ({ isBurgerOpen, toggleBurger }: SearchFormProps) => {
   const { register, handleSubmit } = useForm<FormValue>();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -15,6 +20,7 @@ export const SearchForm = () => {
     if (searchValue) {
       navigate(generatePath(ROUTE.SEARCH, { searchValue, currentPage: "1" }));
       dispatch(setSearchValue(searchValue));
+      isBurgerOpen && toggleBurger();
     }
   };
 
