@@ -246,7 +246,6 @@ const userSlice = createSlice({
       state.userEmail = payload.userEmail;
       state.userName = payload.userName;
       state.isLoading = "succeeded";
-      state.passwordChanged = true;
     });
     builder.addCase(fetchAccountUpdate.rejected, (state, { payload }) => {
       if (payload) {
