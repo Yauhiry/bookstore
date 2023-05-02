@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { COLOR, TYPOGRAPHY } from "ui";
+import { motion } from "framer-motion";
 
-const StyledAccountMenu = styled.div`
+const StyledAccountMenu = styled(motion.div)`
   position: absolute;
   display: grid;
   place-items: center;
@@ -11,13 +12,14 @@ const StyledAccountMenu = styled.div`
   right: 0;
   padding-bottom: 24px;
   border-bottom: 1px solid ${COLOR.GRAY};
+  overflow: hidden;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(motion(Link))`
   ${TYPOGRAPHY.H3}
 `;
 
-const LogOutButton = styled.button`
+const LogOutButton = styled(motion.button)`
   display: grid;
   place-items: center;
   padding: 0 40px;

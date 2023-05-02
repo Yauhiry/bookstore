@@ -33,10 +33,12 @@ import {
   ImageWrapper,
   FavoriteButton,
   StyledFavoritesIcon,
+  HiddenDetailItems,
 } from "./styles";
 import { useToggle } from "hooks";
 import { removeFavorite, setFavorite } from "store/features/favoritesSlice";
 import { ROUTE } from "router";
+import { AnimatePresence } from "framer-motion";
 
 export const BookPage = () => {
   const { isAuth } = useAppSelector(selectUser);
@@ -89,8 +91,18 @@ export const BookPage = () => {
               <DetailItem name="Publisher" value={publisher} />
               <DetailItem name="Language" value={language} />
               <DetailItem name="Format" value="Paper book / ebook (PDF)" />
-              {isMoreDetails && <DetailItem name="Year" value={year} />}
-              {isMoreDetails && <DetailItem name="Pages" value={pages} />}
+              <AnimatePresence>
+                {isMoreDetails && (
+                  <HiddenDetailItems
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                  >
+                    <DetailItem name="Year" value={year} />
+                    <DetailItem name="Pages" value={pages} />
+                  </HiddenDetailItems>
+                )}
+              </AnimatePresence>
               <MoreWrapper>
                 {isMoreDetails ? (
                   <MoreButton onClick={toggleMoreDetails}>

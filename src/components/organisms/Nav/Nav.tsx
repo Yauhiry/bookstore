@@ -60,9 +60,7 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
         )}
         {!mediaSize && <StyledBurgerMenuIcon />}
       </LinkGroup>
-      {isAccountMenuOpen && (
-        <AccountMenu isAccountMenuOpen={isAccountMenuOpen} toggleAccountMenu={toggleAccountMenu} />
-      )}
+      <AccountMenu isAccountMenuOpen={isAccountMenuOpen} toggleAccountMenu={toggleAccountMenu} />
     </StyledNav>
   );
 };

@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { COLOR, TYPOGRAPHY } from "ui";
 
-const StyledButton = styled.button`
+const StyledButton = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;

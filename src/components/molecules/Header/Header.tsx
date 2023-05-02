@@ -13,7 +13,12 @@ export const Header = ({ title }: HeaderProps) => {
 
   return (
     <StyledHeader>
-      <StyledArrowLeftIcon onClick={handleBack} />
+      <StyledArrowLeftIcon
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.1 }}
+        onClick={handleBack}
+      />
       <PageTitle title={title} />
     </StyledHeader>
   );

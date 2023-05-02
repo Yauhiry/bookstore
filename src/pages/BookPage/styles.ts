@@ -1,4 +1,5 @@
 import { DropdownChevronIcon, FavoritesIcon } from "assets";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { COLOR, MEDIA, TYPOGRAPHY } from "ui";
 
@@ -98,6 +99,10 @@ const StyledDropdownChevronIcon = styled(DropdownChevronIcon)`
   }
 `;
 
+const HiddenDetailItems = styled(motion.div)`
+  overflow: hidden;
+`;
+
 export {
   StyledBookPage,
   Container,
@@ -113,4 +118,5 @@ export {
   MoreWrapper,
   MoreButton,
   StyledDropdownChevronIcon,
+  HiddenDetailItems,
 };
