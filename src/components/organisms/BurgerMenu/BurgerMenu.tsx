@@ -27,6 +27,7 @@ interface BurgerMenuProps {
   isOpenMenu: boolean;
   toggleMenu: () => void;
   isTablet: boolean;
+  isMobile: boolean;
 }
 
 const burgerMenu = {
@@ -60,15 +61,13 @@ const item = {
   exit: { opacity: 0 },
 };
 
-export const BurgerMenu = ({ isOpenMenu, toggleMenu }: BurgerMenuProps) => {
+export const BurgerMenu = ({ isOpenMenu, toggleMenu, isMobile }: BurgerMenuProps) => {
   useBodyScrollLock();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { cartItems } = useAppSelector(selectCart);
   const { favorites } = useAppSelector(selectFavorites);
   const { isAuth } = useAppSelector(selectUser);
-  const { width = 0 } = useWindowSize();
-  const isMobile = width > 480;
 
   const handleClick = () => {
     toggleMenu();
@@ -88,7 +87,7 @@ export const BurgerMenu = ({ isOpenMenu, toggleMenu }: BurgerMenuProps) => {
         exit="exit"
         variants={container}
       >
-        {isMobile && (
+        {!isMobile && (
           <Head>
             <CloseButton onClick={toggleMenu}>
               <StyledCrossIcon />

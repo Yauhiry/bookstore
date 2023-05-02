@@ -27,6 +27,7 @@ interface NavProps {
 export const Nav = ({ theme, toggleTheme }: NavProps) => {
   const { width = 0 } = useWindowSize();
   const mediaSize = width >= 992;
+  const isMobile = width < 480;
   const { cartItems } = useAppSelector(selectCart);
   const { favorites } = useAppSelector(selectFavorites);
   const { isAuth } = useAppSelector(selectUser);
@@ -77,7 +78,12 @@ export const Nav = ({ theme, toggleTheme }: NavProps) => {
       <AccountMenu isAccountMenuOpen={isAccountMenuOpen} toggleAccountMenu={toggleAccountMenu} />
       <AnimatePresence>
         {isBurgerOpen && (
-          <BurgerMenu isOpenMenu={isBurgerOpen} toggleMenu={toggleBurger} isTablet={!mediaSize} />
+          <BurgerMenu
+            isOpenMenu={isBurgerOpen}
+            toggleMenu={toggleBurger}
+            isTablet={!mediaSize}
+            isMobile={isMobile}
+          />
         )}
       </AnimatePresence>
     </StyledNav>
