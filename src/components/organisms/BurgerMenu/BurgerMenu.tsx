@@ -12,7 +12,7 @@ import {
   StyledDotBadge,
 } from "./styles";
 import { SearchForm } from "components";
-import { useBodyScrollLock, useWindowSize } from "hooks";
+import { useBodyScrollLock } from "hooks";
 import {
   fetchSignOutUser,
   selectCart,

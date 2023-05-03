@@ -3,11 +3,35 @@ import { Button, FormTitle, Input } from "components";
 import { fetchNewPassword, selectUser, useAppDispatch, useAppSelector } from "store";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { FormValue, NewPasswordFormValue } from "types";
+import { NewPasswordFormValue } from "types";
 import { ROUTE } from "router";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup
+  .object()
+  .shape({
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("newPassword")], "Password must be match")
+      .required("Confirm password is a required field"),
+    newPassword: yup
+      .string()
+      .required("New password is a required field")
+      .min(6, "Password must be at least 6 characters!"),
+  })
+  .required();
+type ValidationForm = yup.InferType<typeof schema>;
 
 export const NewPasswordForm = () => {
-  const { register, handleSubmit, reset } = useForm<FormValue>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ValidationForm>({
+    resolver: yupResolver(schema),
+  });
   const { isLoading } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -25,10 +49,11 @@ export const NewPasswordForm = () => {
         <Input
           label="Password"
           id="password"
-          name="password"
+          name="newPassword"
           type="password"
           placeholder="Your password"
           register={register}
+          error={errors.newPassword?.message}
         />
         <Input
           label="Confirm password"
@@ -37,6 +62,7 @@ export const NewPasswordForm = () => {
           type="password"
           placeholder="Confirm your password"
           register={register}
+          error={errors.confirmPassword?.message}
         />
       </NewPasswordFormContainer>
       <Button type="submit" text="set password" loading={isLoading === "pending"} />

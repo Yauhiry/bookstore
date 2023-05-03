@@ -2,24 +2,26 @@ import {
   Book,
   ResponseBooks,
   BookDetails,
-  FormValue,
+  SubscribeValue,
   Theme,
   SignUpFormValues,
   SignInFormValues,
   PasswordResetFormValue,
   NewPasswordFormValue,
   AccountFormValue,
+  SearchValue,
 } from "./types";
 
 export type {
   Book,
   ResponseBooks,
   BookDetails,
-  FormValue,
+  SubscribeValue,
   Theme,
   SignUpFormValues,
   SignInFormValues,
   PasswordResetFormValue,
   NewPasswordFormValue,
   AccountFormValue,
+  SearchValue,
 };

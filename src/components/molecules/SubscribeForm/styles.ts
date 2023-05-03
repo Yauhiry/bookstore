@@ -7,6 +7,7 @@ const StyledSubscribeForm = styled.form`
   padding: 24px;
   background: ${COLOR.PRIMARY};
   ${MEDIA.MD} {
+    align-items: start;
     grid-template-columns: 1fr 160px;
     grid-template-rows: auto auto;
     padding: 40px;

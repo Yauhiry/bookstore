@@ -41,19 +41,10 @@ export interface ResponseBooks {
   page: string;
 }
 
-export interface FormValue {
-  searchValue: string;
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  newPassword: string;
-}
-
 export interface SignUpFormValues {
   name: string;
   email: string;
-  password: string;
+  newPassword: string;
   confirmPassword: string;
 }
 
@@ -67,7 +58,7 @@ export interface PasswordResetFormValue {
 }
 
 export interface NewPasswordFormValue {
-  password: string;
+  newPassword: string;
   confirmPassword: string;
 }
 
@@ -77,6 +68,14 @@ export interface AccountFormValue {
   password: string;
   newPassword: string;
   confirmPassword: string;
+}
+
+export interface SubscribeValue {
+  email: string;
+}
+
+export interface SearchValue {
+  searchValue: string;
 }
 
 export type Theme = "light" | "dark";

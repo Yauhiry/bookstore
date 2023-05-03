@@ -1,13 +1,13 @@
 import { InputHTMLAttributes } from "react";
 import { UseFormRegister } from "react-hook-form";
-import { FormValue } from "types";
-import { InputContainer, Label, StyledInput } from "./styles";
+import { ErrorMessage, InputContainer, Label, StyledInput } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  register: UseFormRegister<FormValue>;
+  register: UseFormRegister<HTMLInputElement>;
   name: "name" | "email" | "password" | "searchValue" | "confirmPassword" | "newPassword";
   label?: string;
   className?: string;
+  error?: string;
 }
 
 export const Input = ({
@@ -18,6 +18,7 @@ export const Input = ({
   type,
   label,
   defaultValue,
+  error,
   register,
 }: InputProps) => {
   return (
@@ -30,6 +31,7 @@ export const Input = ({
         defaultValue={defaultValue}
         {...register(name)}
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputContainer>
   );
 };

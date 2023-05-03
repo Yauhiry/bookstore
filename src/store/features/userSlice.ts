@@ -35,9 +35,9 @@ export const fetchSignUpUser = createAsyncThunk<
   Pick<UserState, "userName" | "userEmail">,
   SignUpFormValues,
   { rejectValue: string }
->("user/fetchSignUpUser", async ({ email, password, name }, { rejectWithValue }) => {
+>("user/fetchSignUpUser", async ({ email, newPassword, name }, { rejectWithValue }) => {
   try {
-    const { user } = await createUserWithEmailAndPassword(auth, email, password);
+    const { user } = await createUserWithEmailAndPassword(auth, email, newPassword);
     await updateProfile(auth.currentUser as User, { displayName: name });
     return {
       userName: user.displayName,
@@ -95,10 +95,10 @@ export const fetchNewPassword = createAsyncThunk<
   undefined,
   NewPasswordFormValue,
   { rejectValue: string }
->("user/fetchNewPassword", async ({ password }, { rejectWithValue }) => {
+>("user/fetchNewPassword", async ({ newPassword }, { rejectWithValue }) => {
   try {
     const oobCode = (await new URLSearchParams(window.location.search).get("oobCode")) as string;
-    await confirmPasswordReset(auth, oobCode, password);
+    await confirmPasswordReset(auth, oobCode, newPassword);
   } catch (error) {
     const firebaseError = error as FirebaseError;
     return rejectWithValue(firebaseError.code);

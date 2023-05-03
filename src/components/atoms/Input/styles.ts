@@ -30,4 +30,9 @@ const StyledInput = styled.input`
   }
 `;
 
-export { InputContainer, Label, StyledInput };
+const ErrorMessage = styled.p`
+  ${TYPOGRAPHY.B1}
+  color: ${COLOR.RED};
+`;
+
+export { InputContainer, Label, StyledInput, ErrorMessage };
