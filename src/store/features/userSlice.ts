@@ -21,6 +21,7 @@ import {
   SignUpFormValues,
 } from "types";
 import { FirebaseError } from "firebase/app";
+import { FirebaseErrorMessage, getFirebaseErrorMessage } from "utils";
 
 interface UserState {
   userName: string | null;
@@ -34,7 +35,7 @@ interface UserState {
 export const fetchSignUpUser = createAsyncThunk<
   Pick<UserState, "userName" | "userEmail">,
   SignUpFormValues,
-  { rejectValue: string }
+  { rejectValue: FirebaseErrorMessage }
 >("user/fetchSignUpUser", async ({ email, newPassword, name }, { rejectWithValue }) => {
   try {
     const { user } = await createUserWithEmailAndPassword(auth, email, newPassword);
@@ -45,14 +46,14 @@ export const fetchSignUpUser = createAsyncThunk<
     };
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    return rejectWithValue(firebaseError.code);
+    return rejectWithValue(getFirebaseErrorMessage(firebaseError.code));
   }
 });
 
 export const fetchSignInUser = createAsyncThunk<
   Pick<UserState, "userName" | "userEmail">,
   SignInFormValues,
-  { rejectValue: string }
+  { rejectValue: FirebaseErrorMessage }
 >("user/fetchSignInUser", async ({ email, password }, { rejectWithValue }) => {
   try {
     const { user } = await signInWithEmailAndPassword(auth, email, password);
@@ -62,53 +63,54 @@ export const fetchSignInUser = createAsyncThunk<
     };
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    return rejectWithValue(firebaseError.code);
+    return rejectWithValue(getFirebaseErrorMessage(firebaseError.code));
   }
 });
 
-export const fetchSignOutUser = createAsyncThunk<void, undefined, { rejectValue: string }>(
-  "user/fetchSignOutUser",
-  async (_, { rejectWithValue }) => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      const firebaseError = error as FirebaseError;
-      return rejectWithValue(firebaseError.code);
-    }
-  },
-);
+export const fetchSignOutUser = createAsyncThunk<
+  void,
+  undefined,
+  { rejectValue: FirebaseErrorMessage }
+>("user/fetchSignOutUser", async (_, { rejectWithValue }) => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    const firebaseError = error as FirebaseError;
+    return rejectWithValue(getFirebaseErrorMessage(firebaseError.code));
+  }
+});
 
 export const fetchResetUserPassword = createAsyncThunk<
   undefined,
   PasswordResetFormValue,
-  { rejectValue: string }
+  { rejectValue: FirebaseErrorMessage }
 >("user/fetchResetUserPassword", async ({ email }, { rejectWithValue }) => {
   try {
     await sendPasswordResetEmail(auth, email);
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    return rejectWithValue(firebaseError.code);
+    return rejectWithValue(getFirebaseErrorMessage(firebaseError.code));
   }
 });
 
 export const fetchNewPassword = createAsyncThunk<
   undefined,
   NewPasswordFormValue,
-  { rejectValue: string }
+  { rejectValue: FirebaseErrorMessage }
 >("user/fetchNewPassword", async ({ newPassword }, { rejectWithValue }) => {
   try {
     const oobCode = (await new URLSearchParams(window.location.search).get("oobCode")) as string;
     await confirmPasswordReset(auth, oobCode, newPassword);
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    return rejectWithValue(firebaseError.code);
+    return rejectWithValue(getFirebaseErrorMessage(firebaseError.code));
   }
 });
 
 export const fetchAccountUpdate = createAsyncThunk<
   Pick<UserState, "userName" | "userEmail">,
   AccountFormValue,
-  { rejectValue: string }
+  { rejectValue: FirebaseErrorMessage }
 >(
   "user/fetchAccountUpdate",
   async ({ name, email, password, newPassword }, { rejectWithValue }) => {
@@ -134,7 +136,7 @@ export const fetchAccountUpdate = createAsyncThunk<
       };
     } catch (error) {
       const firebaseError = error as FirebaseError;
-      return rejectWithValue(firebaseError.code);
+      return rejectWithValue(getFirebaseErrorMessage(firebaseError.code));
     }
   },
 );

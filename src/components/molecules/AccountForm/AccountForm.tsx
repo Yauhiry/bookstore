@@ -1,4 +1,4 @@
-import { Button, Input } from "components";
+import { Button, ErrorMessage, Input } from "components";
 import {
   Control,
   PasswordContainer,
@@ -39,7 +39,7 @@ export const AccountForm = () => {
   } = useForm<ValidationForm>({
     resolver: yupResolver(schema),
   });
-  const { userName, userEmail, isLoading } = useAppSelector(selectUser);
+  const { userName, userEmail, isLoading, errorMessage } = useAppSelector(selectUser);
 
   const onSubmit: SubmitHandler<AccountFormValue> = async (AccountFormValue) => {
     await dispatch(fetchAccountUpdate(AccountFormValue)).unwrap();
@@ -106,6 +106,7 @@ export const AccountForm = () => {
           error={errors.confirmPassword?.message}
         />
       </PasswordContainer>
+      {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
       <Control>
         <Button text="Save changes" type="submit" loading={isLoading === "pending"} />
         <WhiteButton text="Cancel" type="button" onClick={handleClick} />

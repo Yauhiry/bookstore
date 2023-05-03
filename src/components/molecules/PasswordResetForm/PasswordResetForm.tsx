@@ -1,5 +1,5 @@
 import { Email, Message, StyledPasswordResetForm } from "./styles";
-import { Button, FormTitle, Input } from "components";
+import { Button, ErrorMessage, FormTitle, Input } from "components";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { PasswordResetFormValue } from "types";
 import { useState } from "react";
@@ -27,7 +27,7 @@ export const PasswordResetForm = () => {
     resolver: yupResolver(schema),
   });
   const [sentEmail, setSentEmail] = useState("");
-  const { isLoading } = useAppSelector(selectUser);
+  const { isLoading, errorMessage } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -58,6 +58,7 @@ export const PasswordResetForm = () => {
         register={register}
         error={errors.email?.message}
       />
+      {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
       {sentEmail ? (
         <Button type="button" text="go to home" onClick={handleClick} />
       ) : (

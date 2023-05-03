@@ -1,4 +1,4 @@
-import { Button, Input } from "components";
+import { Button, ErrorMessage, Input } from "components";
 import { SignUpFormContainer, StyledSignUpForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { SignUpFormValues } from "types";
@@ -83,6 +83,7 @@ export const SignUpForm = () => {
           error={errors.confirmPassword?.message}
         />
       </SignUpFormContainer>
+      {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
       <Button type="submit" text="sign up" loading={isLoading === "pending"} />
     </StyledSignUpForm>
   );

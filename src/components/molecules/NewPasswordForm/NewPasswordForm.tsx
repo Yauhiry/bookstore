@@ -1,5 +1,5 @@
 import { NewPasswordFormContainer, StyledNewPasswordForm } from "./styles";
-import { Button, FormTitle, Input } from "components";
+import { Button, ErrorMessage, FormTitle, Input } from "components";
 import { fetchNewPassword, selectUser, useAppDispatch, useAppSelector } from "store";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +32,7 @@ export const NewPasswordForm = () => {
   } = useForm<ValidationForm>({
     resolver: yupResolver(schema),
   });
-  const { isLoading } = useAppSelector(selectUser);
+  const { isLoading, errorMessage } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -65,6 +65,7 @@ export const NewPasswordForm = () => {
           error={errors.confirmPassword?.message}
         />
       </NewPasswordFormContainer>
+      {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
       <Button type="submit" text="set password" loading={isLoading === "pending"} />
     </StyledNewPasswordForm>
   );

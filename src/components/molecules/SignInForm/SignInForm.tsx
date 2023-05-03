@@ -1,4 +1,4 @@
-import { Button, Input } from "components";
+import { Button, ErrorMessage, Input } from "components";
 import { Message, SignInFormContainer, StyledLink, StyledSignInForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { SignInFormValues } from "types";
@@ -63,6 +63,7 @@ export const SignInForm = () => {
         />
         <StyledLink to={ROUTE.PASSWORD_RESET}>Forgot password ?</StyledLink>
       </SignInFormContainer>
+      {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
       <Button type="submit" text="sign in" loading={isLoading === "pending"} />
     </StyledSignInForm>
   );

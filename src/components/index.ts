@@ -29,6 +29,7 @@ import { NewPasswordForm } from "./molecules/NewPasswordForm/NewPasswordForm";
 import { AccountForm } from "./molecules/AccountForm/AccountForm";
 import { Portal } from "./atoms/Portal/Portal";
 import { Modal } from "./organisms/Modal/Modal";
+import { ErrorMessage } from "./atoms/ErrorMessage/ErrorMessage";
 
 export {
   PortalTarget,
@@ -62,4 +63,5 @@ export {
   AccountForm,
   Portal,
   Modal,
+  ErrorMessage,
 };
