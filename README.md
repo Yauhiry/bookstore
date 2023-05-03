@@ -55,7 +55,7 @@ Bookstore адаптирован под все современные устро
 
 <p align="right">(<a href="#readme-top">наверх</a>)</p>
 
-##about-the-project Создано c помощью
+## Создано c помощью
 
 - [![React][react.js]][react-url]
 - [![Npm][npm.js]][npm-url]
