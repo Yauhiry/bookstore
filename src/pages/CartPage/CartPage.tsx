@@ -1,4 +1,4 @@
-import { Button, CartItem, Header } from "components";
+import { Button, CartItem, Header, Modal } from "components";
 import {
   StyledCartPage,
   CartEmpty,
@@ -18,20 +18,27 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
+import { useToggle } from "hooks";
 
 export const CartPage = () => {
   const { isAuth } = useAppSelector(selectUser);
   const { cartItems, sumTotal, vat, total } = useAppSelector(selectCart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useToggle();
 
   const handleClick = () => {
     if (isAuth) {
+      setIsModalOpen();
       dispatch(clearCart());
-      alert("OK");
     } else {
       navigate(ROUTE.SIGN_IN);
     }
+  };
+
+  const handleClose = () => {
+    setIsModalOpen();
+    navigate(ROUTE.HOME);
   };
 
   useEffect(() => {
@@ -40,6 +47,12 @@ export const CartPage = () => {
 
   return (
     <StyledCartPage $isFilled={cartItems.length > 0}>
+      {isModalOpen && (
+        <Modal
+          handleClose={handleClose}
+          text="Your order accepted. Payment details will be sent to your email."
+        />
+      )}
       <Header title="Your cart" />
       {!cartItems.length ? (
         <CartEmpty>is currently empty</CartEmpty>

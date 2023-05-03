@@ -1,3 +1,4 @@
+import { PortalTarget } from "./atoms/Portal/Portal";
 import { PageTitle } from "./atoms/PageTitle/PageTitle";
 import { PageLoader } from "./atoms/PageLoader/PageLoader";
 import { Button } from "./atoms/Button/Button";
@@ -26,8 +27,11 @@ import { SignUpForm } from "./molecules/SignUpForm/SignUpForm";
 import { PasswordResetForm } from "./molecules/PasswordResetForm/PasswordResetForm";
 import { NewPasswordForm } from "./molecules/NewPasswordForm/NewPasswordForm";
 import { AccountForm } from "./molecules/AccountForm/AccountForm";
+import { Portal } from "./atoms/Portal/Portal";
+import { Modal } from "./organisms/Modal/Modal";
 
 export {
+  PortalTarget,
   PageTitle,
   PageLoader,
   Button,
@@ -56,4 +60,6 @@ export {
   PasswordResetForm,
   NewPasswordForm,
   AccountForm,
+  Portal,
+  Modal,
 };

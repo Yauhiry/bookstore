@@ -1,18 +1,26 @@
-import { Button, Input } from "components";
+import { Button, Input, Modal } from "components";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormValue } from "types";
 import { Text, Description, StyledSubscribeForm, Title } from "./styles";
+import { useToggle } from "hooks";
+import { useState } from "react";
 
 export const SubscribeForm = () => {
   const { register, handleSubmit, reset } = useForm<FormValue>();
+  const [isModalOpen, setIsModalOpen] = useToggle();
+  const [isCurrentEmail, setCurrentEmail] = useState("");
 
   const onSubmit: SubmitHandler<FormValue> = ({ email }: FormValue) => {
-    alert(`${email} successfully subscribed`);
+    setCurrentEmail(email);
+    setIsModalOpen();
     reset();
   };
 
   return (
     <StyledSubscribeForm onSubmit={handleSubmit(onSubmit)}>
+      {isModalOpen && (
+        <Modal handleClose={setIsModalOpen} text={`${isCurrentEmail} successfully subscribed!`} />
+      )}
       <Text>
         <Title>Subscribe to Newsletter</Title>
         <Description>
