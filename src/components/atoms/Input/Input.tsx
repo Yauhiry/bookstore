@@ -3,7 +3,7 @@ import { UseFormRegister } from "react-hook-form";
 import { ErrorMessage, InputContainer, Label, StyledInput } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  register: UseFormRegister<HTMLInputElement>;
+  register: UseFormRegister<any>;
   name: "name" | "email" | "password" | "searchValue" | "confirmPassword" | "newPassword";
   label?: string;
   className?: string;

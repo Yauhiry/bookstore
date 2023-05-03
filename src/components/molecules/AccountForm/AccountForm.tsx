@@ -16,25 +16,16 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-const schema = yup
-  .object()
-  .shape({
-    name: yup.string().required("Name is a required field"),
-    email: yup.string().required("Email is a required field").email("Email is not valid!"),
-    password: yup
-      .string()
-      .min(6, "Password must be at least 6 characters!")
-      .required("Password is a required field"),
-    confirmPassword: yup
-      .string()
-      .oneOf([yup.ref("newPassword")], "Password must be match")
-      .required("Confirm password is a required field"),
-    newPassword: yup
-      .string()
-      .min(6, "Password must be at least 6 characters!")
-      .required("New password is a required field"),
-  })
-  .required();
+const schema = yup.object().shape({
+  name: yup.string(),
+  email: yup.string().email("Email is not valid!"),
+  password: yup
+    .string()
+    .required("Password is a required field")
+    .min(6, "Password must be at least 6 characters!"),
+  confirmPassword: yup.string().oneOf([yup.ref("newPassword")], "Password must be match"),
+  newPassword: yup.string(),
+});
 type ValidationForm = yup.InferType<typeof schema>;
 
 export const AccountForm = () => {

@@ -10,6 +10,7 @@ import {
   NewPasswordFormValue,
   AccountFormValue,
   SearchValue,
+  FormValue,
 } from "./types";
 
 export type {
@@ -24,4 +25,5 @@ export type {
   NewPasswordFormValue,
   AccountFormValue,
   SearchValue,
+  FormValue,
 };

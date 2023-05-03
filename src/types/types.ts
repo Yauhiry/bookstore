@@ -63,11 +63,11 @@ export interface NewPasswordFormValue {
 }
 
 export interface AccountFormValue {
-  name: string;
-  email: string;
+  name?: string;
+  email?: string;
   password: string;
-  newPassword: string;
-  confirmPassword: string;
+  newPassword?: string;
+  confirmPassword?: string;
 }
 
 export interface SubscribeValue {
@@ -76,6 +76,15 @@ export interface SubscribeValue {
 
 export interface SearchValue {
   searchValue: string;
+}
+
+export interface FormValue {
+  searchValue: string;
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  newPassword: string;
 }
 
 export type Theme = "light" | "dark";
