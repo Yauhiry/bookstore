@@ -11,8 +11,10 @@ const StyledSearchForm = styled.form`
 
 const SearchButton = styled.button`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  display: flex;
+  padding: 16px;
+  top: 0;
+  right: 0;
   background: none;
   color: ${COLOR.DARK};
 `;
