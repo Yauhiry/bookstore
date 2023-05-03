@@ -50,7 +50,7 @@
 
 <br>
 <br>
-<img src="images/Adaptive.jpg" alt="logo">
+<img src="images/adaptive.jpg" alt="logo">
 Bookstore адаптирован под все современные устройства.
 
 <p align="right">(<a href="#readme-top">наверх</a>)</p>
