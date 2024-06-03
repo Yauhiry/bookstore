@@ -99,7 +99,7 @@ Bookstore адаптирован под все современные устро
 <p align="right">(<a href="#readme-top">наверх</a>)</p>
 
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/yauheni-hirynski-86b454262/
+[linkedin-url]: https://www.linkedin.com/in/hirynski/
 [product-screenshot]: images/budget-app.png
 [npm.js]: https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
 [npm-url]: https://www.npmjs.com/
